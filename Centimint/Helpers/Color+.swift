@@ -11,4 +11,6 @@ extension Color {
     static let wind = Color("wind")
     static let ash = Color("ash")
     static let secondaryPink = Color("secondaryPink")
+    static let PGred = Color("PGred")
+    static let Primary = Color("Primary")
 }

@@ -6,6 +6,7 @@ class HomeViewModel: ObservableObject {
     
     @Published var showLoader = false
     @Published var titles: [String] = []
+
     
     init(appCoordinator: AppCoordinator, serviceManager: ServiceManager) {
         self.appCoordinator = appCoordinator
@@ -16,73 +17,70 @@ class HomeViewModel: ObservableObject {
 struct HomeView: View {
     @ObservedObject var viewModel: HomeViewModel
     
-    
+    @StateObject private var weeklyCalendarViewModel = WeeklyCalendarViewModel(appCoordinator: AppCoordinator(serviceManager: ServiceManager()))
+
     
     var topBar: some View {
         HStack {
+            WeeklyCalendarView(viewModel: weeklyCalendarViewModel)
+                .padding()
             
-            VStack(alignment: .leading) {
-                Text("Good Day!")
-                    .foregroundColor(.secondaryWhite)
-                    .font(.headline)
-                    .bold()
-                Text("test")
-                    .foregroundColor(.secondaryWhite)
-                    .font(.subheadline)
-            }
-            .padding(.leading, 10)
+            Text("iconhere")
             
-            Spacer()
-            
-                .padding(.trailing, 20)
         }
     }
     
-    
-    var inProgressModule: some View {
+    var midBar: some View {
         VStack {
-            HStack {
-                VStack(alignment: .leading) {
-                    Text("Currently Learning")
-                        .font(.subheadline)
-                        .foregroundColor(.secondaryWhite)
-                        .padding(.bottom, 8)
-                    
-                    
-                }
+            
+            CardBackground(color: .PGred)
+            
+        }
+    }
+    var overviewBar: some View {
+        ScrollView{
+            VStack {
+                
+                CardBackground(color: .PGred)
+                CardBackground(color: .PGred)
+                CardBackground(color: .PGred)
+                
                 
             }
-            Spacer()
+            .padding()
         }
-        .padding(.bottom, 10)
-        
-        return ConfirmationButton(title: "Continue Training", type: .primaryLargeConfirmation) {
-        }
-        .padding()
     }
     
+//
+//    var inProgressModule: some View {
+//        VStack {
+//            HStack {
+//                VStack(alignment: .leading) {
+//                    Text("Currently Learning")
+//                        .font(.subheadline)
+//                        .foregroundColor(.black)
+//                        .padding(.bottom, 8)
+//
+//
+//                }
+//
+//            }
+//            Spacer()
+//        }
+//        .padding(.bottom, 10)
+//
+//        return ConfirmationButton(title: "Continue Training", type: .primaryLargeConfirmation) {
+//        }
+//        .padding()
+//    }
+    
     var body: some View {
-        ScrollView {
+      
             ZStack {
-                //            if let _ = CommandService.sharedInstance.previousCommand {
-                //                VStack {
-                //                    HStack {
-                //                        Spacer()
-                //                        IconImage(.custom(.backgroundImage1))
-                //                            .frame(width: 250)
-                //                            .padding(.top, 200)
-                //                            .offset(x: 50)
-                //                    }
-                //                    Spacer()
-                //                }
-                //            }
                 VStack {
                     topBar
-                    //                DropDownFilterView(viewModel: DropDownFilterViewModel(filterBy: .category))
-                    
-                    inProgressModule
-                        .padding(.vertical, 30)
-                        .padding(.horizontal, 20)
+                    midBar
+                    overviewBar
                 }
             }
             
@@ -100,7 +98,6 @@ struct HomeView: View {
             Spacer()
                 .frame(height: 100)
                 .background(.clear)
-        }
         .onAppear {
             let userService = UserService.sharedInstance
             delay(0) {
