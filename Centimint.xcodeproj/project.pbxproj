@@ -70,6 +70,7 @@
 		4F5C084E2A99BCD100299A62 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5C084D2A99BCD100299A62 /* ContentView.swift */; };
 		4F5C08502A99BCD200299A62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5C084F2A99BCD200299A62 /* Assets.xcassets */; };
 		4F5C08532A99BCD200299A62 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5C08522A99BCD200299A62 /* Preview Assets.xcassets */; };
+		4FDBADB62AA7862800195509 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDBADB52AA7862800195509 /* View+.swift */; };
 		4FDC28B62A99D31700A6680A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDC28B52A99D31700A6680A /* AppCoordinator.swift */; };
 		4FDC28B82A99D7A300A6680A /* SplashLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDC28B72A99D7A300A6680A /* SplashLoader.swift */; };
 		4FDC28BB2A99D9ED00A6680A /* TextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDC28B92A99D9ED00A6680A /* TextFieldWithIcon.swift */; };
@@ -142,6 +143,7 @@
 		4F5C084D2A99BCD100299A62 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4F5C084F2A99BCD200299A62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F5C08522A99BCD200299A62 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4FDBADB52AA7862800195509 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		4FDC28B52A99D31700A6680A /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		4FDC28B72A99D7A300A6680A /* SplashLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashLoader.swift; sourceTree = "<group>"; };
 		4FDC28B92A99D9ED00A6680A /* TextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldWithIcon.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				4F29EE302A99C50500F469F9 /* Corners.swift */,
 				4F29EE312A99C50500F469F9 /* Fixtures.swift */,
 				4F208C302A9BCF39005F490A /* Constants.swift */,
+				4FDBADB52AA7862800195509 /* View+.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				4FDC28BC2A99D9ED00A6680A /* ConfirmationButton.swift in Sources */,
 				4F29EE7D2A99C50500F469F9 /* Fixtures.swift in Sources */,
 				4F29EE922A99C50500F469F9 /* CalendarView.swift in Sources */,
+				4FDBADB62AA7862800195509 /* View+.swift in Sources */,
 				4F5C084E2A99BCD100299A62 /* ContentView.swift in Sources */,
 				4F5C084C2A99BCD100299A62 /* CentimintApp.swift in Sources */,
 				4F29EE9B2A99C50500F469F9 /* CloseButtonView.swift in Sources */,
@@ -800,6 +804,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -831,6 +836,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

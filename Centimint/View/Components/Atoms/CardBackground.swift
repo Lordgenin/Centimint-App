@@ -19,15 +19,15 @@ struct CardBackground_Previews: PreviewProvider {
         VStack {
             HStack {
                 VStack(alignment: .leading) {
-                    Text("Your Workout for Today is Ready!")
+                    Text("1")
                         .bold()
                         .padding(.top, 24)
                         .padding(.leading, 20)
                         .padding(.trailing, 20)
-                    Text("Fullbody Workout")
+                    Text("2")
                         .padding(.top, 1)
                         .padding(.leading, 20)
-                    Text("11 Exercises")
+                    Text("3")
                         .font(.subheadline)
                         .frame(height: 25, alignment: .leading)
                         .padding(.horizontal, 12)
@@ -46,10 +46,10 @@ struct CardBackground_Previews: PreviewProvider {
             }
             HStack {
                 Spacer()
-                ConfirmationButton(title: "Start Workout", type: .primaryLargeConfirmation) {
+                ConfirmationButton(title: "4", type: .primaryLargeConfirmation) {
                     //Action
                 }
-                ConfirmationButton(title: "Want a different workout?", type: .primaryLargeConfirmation) {
+                ConfirmationButton(title: "5", type: .primaryLargeConfirmation) {
                     //Action
                 }
                 Spacer()

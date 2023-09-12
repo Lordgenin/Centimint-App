@@ -10,8 +10,8 @@ enum ButtonType {
 struct ConfirmationButton: View {
     var title: String
     var type: ButtonType
-    var foregroundColor: Color? = .black
-    var backgroundColor: Color? = .clear
+    var foregroundColor: Color? = .white
+    var backgroundColor: Color? = .black
     var backgroundOpacity: Double? = 0.2
     @State var isLoading: Bool = false
 
@@ -30,7 +30,7 @@ struct ConfirmationButton: View {
                     .foregroundColor(foregroundColor)
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(Color.primaryPurple)
+                    .background(backgroundColor)
                     .cornerRadius(18)
             }
         case .animatedCircleButton(let icon):

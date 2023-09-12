@@ -25,6 +25,9 @@ struct SplashLoader: View {
     
     var body: some View {
         ZStack {
+            (LinearGradient(gradient: Gradient(colors: [Color.Primary, Color.PGred]), startPoint: .top, endPoint: .bottom))
+                .ignoresSafeArea(.all)
+            
             VStack {
                 Spacer()
                 Text(Constants.SplashLoaderName)

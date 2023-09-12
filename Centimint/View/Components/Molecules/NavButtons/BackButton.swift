@@ -8,7 +8,7 @@ struct BackButton: View {
                 .frame(width: 46, height: 46)
                 .overlay(
                     RoundedRectangle(cornerRadius: 25)
-                        .stroke(Color.secondaryWhite, lineWidth: 1)
+                        .stroke(Color.black, lineWidth: 1)
                 )
             
             

@@ -23,15 +23,6 @@ struct WeeklyCalendarView: View {
     var body: some View {
         VStack {
             HStack {
-                CloseButtonView {
-                    viewModel.appCoordinator.closeModals()
-                }
-                Spacer()
-            }
-            .padding(.top, 50)
-            .padding(.leading, 20)
-            
-            HStack {
                 Button(action: goToPreviousWeek) {
                     Image(systemName: "arrow.left")
                         .padding()
@@ -45,12 +36,12 @@ struct WeeklyCalendarView: View {
                         .padding()
                 }
             }
-            .padding(.bottom, 40)
-            
-            WeekView(startDate: viewModel.startDate, onSelectDay: { date in
-                // Callback for when day is selected
-                // viewModel.appCoordinator.closeModals()
-            })
+            .padding(.bottom)
+//
+//            WeekView(startDate: viewModel.startDate, onSelectDay: { date in
+//                // Callback for when day is selected
+//                // viewModel.appCoordinator.closeModals()
+//            })
             
         }
         .background(.clear)

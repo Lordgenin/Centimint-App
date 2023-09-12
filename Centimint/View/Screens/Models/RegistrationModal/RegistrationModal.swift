@@ -28,9 +28,6 @@ class RegistrationModalViewModel: ObservableObject {
     
     @Published var completedRegistration = ""
     
-    @Published var puppyName = ""
-    
-    @Published var imageUrl = ""
     
     private func updateDoubleValue(from stringValue: String, to doubleValue: inout Double) {
         if let newDoubleValue = Double(stringValue) {
@@ -53,254 +50,339 @@ class RegistrationModalViewModel: ObservableObject {
         
     }
 }
-    struct RegistrationModal: View {
-        @ObservedObject var viewModel: RegistrationModalViewModel
-        @State private var selectedPage = 0
-        @State var selectedImage: UIImage? = nil
-        @State private var isDatePickerShown = false
-        
-        func nextButtonPressed() {
-            guard let u = UserService.sharedInstance.user else {
-                print("Something went wrong with getting the user during auth")
-                return
-            }
-            
-            var updatedUser = u
-            
-            if selectedPage == 0 {
-                updatedUser.monthlyinPerMonth = viewModel.monthlyInPerMonth
-                UserService.sharedInstance.updateUser(user: updatedUser)
-            }
-            
-            if selectedPage == 1 {
-                updatedUser.billExpenes = viewModel.billExpenes
-                UserService.sharedInstance.updateUser(user: updatedUser)
-            }
-            
-            if selectedPage == 2 {
-                updatedUser.savingGoal = viewModel.savingGoal
-                UserService.sharedInstance.updateUser(user: updatedUser)
-            }
-            
-            if selectedPage <= 3 {
-                    selectedPage += 1
-            
-            }
-            
-            //once everything is selected we can create a workout for the user
-            if selectedPage > 3 { UserService.sharedInstance.settings.hasIntroductionModalShown = true
-                viewModel.appCoordinator.closeModals()
-            }
+struct RegistrationModal: View {
+    @ObservedObject var viewModel: RegistrationModalViewModel
+    @State private var selectedPage = 0
+  //  @State private var isDatePickerShown = false
+    
+    init(viewModel: RegistrationModalViewModel, initialPage: Int = 0) {
+        self.viewModel = viewModel
+        _selectedPage = State(initialValue: initialPage)
+    }
+    
+    
+    func nextButtonPressed() {
+        guard let u = UserService.sharedInstance.user else {
+            print("Something went wrong with getting the user during auth")
+            return
         }
         
-        var titleGroup: some View {
+        var updatedUser = u
+        
+        if selectedPage == 0 {
+            
+        }
+        
+        if selectedPage == 1 {
+            updatedUser.monthlyinPerMonth = viewModel.monthlyInPerMonth
+            UserService.sharedInstance.updateUser(user: updatedUser)
+        }
+        
+        if selectedPage == 2 {
+            updatedUser.billExpenes = viewModel.billExpenes
+            UserService.sharedInstance.updateUser(user: updatedUser)
+        }
+        
+        if selectedPage == 3 {
+            updatedUser.savingGoal = viewModel.savingGoal
+            UserService.sharedInstance.updateUser(user: updatedUser)
+        }
+        
+        if selectedPage <= 4 {
+            selectedPage += 1
+            
+        }
+        
+        //once everything is selected we can create a workout for the user
+        if selectedPage > 4 { UserService.sharedInstance.settings.hasIntroductionModalShown = true
+            viewModel.appCoordinator.closeModals()
+        }
+    }
+    
+    
+    var titleGroup: some View {
+        VStack {
+            (LinearGradient(gradient: Gradient(colors: [Color.Primary, Color.PGred]), startPoint: .top, endPoint: .bottom))
+                .ignoresSafeArea(.all)
+           // Color.PGred.ignoresSafeArea(.all)
+            //                if (selectedPage <= 5) {
+            //                    VStack(alignment: .leading, spacing: 0) {
+            //                        HStack {
+            //                            Text("\(selectedPage + 1)/5")
+            //                                .foregroundColor(Color.black)
+            //                                .font(.subheadline)
+            //                                .padding(.leading, 20)
+            //                            Spacer()
+            //                        }
+            //                        ProgressView(value: Double(selectedPage + 1), total: 5)
+            //                            .padding()
+            //                            .overlay(
+            //                                LinearGradient(
+            //                                    gradient: Gradient(colors: [
+            //                                        Color(UIColor(red: 0.35, green: 0.38, blue: 1, alpha: 1)),
+            //                                        Color(UIColor(red: 0.85, green: 0.34, blue: 1, alpha: 1))
+            //                                    ]),
+            //                                    startPoint: .leading,
+            //                                    endPoint: .trailing
+            //                                )
+            //                                .mask(
+            //                                    ProgressView(value: Double(selectedPage + 1), total: 5)
+            //                                        .padding()
+            //                                )
+            //                            )
+            //                    }
+            //                }
+            //                else if (selectedPage == 5) {
+            //                    HStack {
+            //                        Spacer()  // Add this Spacer to center the VStack
+            //                        VStack(spacing: 9) {
+            //                            Text(viewModel.completedRegistration.isEmpty ? "Completed Registration" : viewModel.completedRegistration)
+            //                                .multilineTextAlignment(.center)
+            //                                .foregroundColor(.black)
+            //                                .font(.system(size: 44))
+            //                                .bold()
+            //                            Text("Here's some information about your dog at this stage.")
+            //                                .multilineTextAlignment(.center)
+            //                                .font(.headline)
+            //                                .foregroundColor(.black)
+            //                        }
+            //                        Spacer()  // Add this Spacer to center the VStack
+            //                    }
+            //                    .padding(.top, 20)
+            //                    .padding(.bottom, 20)
+            //
+            //                }
+        }
+    }
+    
+    
+    
+    var getStartedPage: some View {
+        GeometryReader { geometry in
+            BackgroundView(geometry: geometry)
             VStack {
-                if selectedPage == 3 {
-                    HStack {
-                        Spacer()  // Add this Spacer to center the VStack
-                        VStack(spacing: 4) {
-                            Text("We have a few questions")
-                                .multilineTextAlignment(.center)
-                                .font(.largeTitle)
-                                .bold()
-                                .foregroundColor(.black)
-                            Text("How much do you make a Month?")
-                                .multilineTextAlignment(.center)
-                                .font(.headline)
-                                .foregroundColor(.black)
-                        }
-                        Spacer()  // Add this Spacer to center the VStack
-                    }
-                    .padding(.top, 20)
-                    .padding(.bottom, 20)
-                    VStack(alignment: .leading, spacing: 0) {
-                        HStack {
-                            Text("\(selectedPage + 1)/4")
-                                .foregroundColor(Color.black)
-                                .font(.subheadline)
-                                .padding(.leading, 20)
-                            Spacer()
-                        }
-                        ProgressView(value: Double(selectedPage + 1), total: 5)
-                            .padding()
-                            .overlay(
-                                LinearGradient(
-                                    gradient: Gradient(colors: [
-                                        Color(UIColor(red: 0.35, green: 0.38, blue: 1, alpha: 1)),
-                                        Color(UIColor(red: 0.85, green: 0.34, blue: 1, alpha: 1))
-                                    ]),
-                                    startPoint: .leading,
-                                    endPoint: .trailing
-                                )
-                                .mask(
-                                    ProgressView(value: Double(selectedPage + 1), total: 5)
-                                        .padding()
-                                )
-                            )
-                    }
-                } else {
-                    HStack {
-                        Spacer()  // Add this Spacer to center the VStack
-                        VStack(spacing: 9) {
-                            Text(viewModel.completedRegistration.isEmpty ? "Completed Registration" : viewModel.completedRegistration)
-                                .multilineTextAlignment(.center)
-                                .foregroundColor(.black)
-                                .font(.system(size: 44))
-                                .bold()
-                            Text("Here's some information about your dog at this stage.")
-                                .multilineTextAlignment(.center)
-                                .font(.headline)
-                                .foregroundColor(.black)
-                        }
-                        Spacer()  // Add this Spacer to center the VStack
-                    }
-                    .padding(.top, 20)
-                    .padding(.bottom, 20)
-
-                }
-            }
-        }
-
-        
-        var monthlyInPerMonth: some View {
-            VStack(alignment: .leading) {
-                Text("Monthly Income?")
-                    .bold()
-                    .padding(.leading, 20)
-                    .foregroundColor(.black)
                 
                 ZStack {
-                    TextFieldWithIcon(text: $viewModel.monthlyInPerMonthString, placeholder: "", icon: .custom(.oval), isSecure: false)
+                    Color.white
+                        .ignoresSafeArea(.all)
+                    
+                    VStack {
+                        
+                        Spacer()
+                            .frame(height: geometry.size.height / 2)
+                        ZStack{
+                            
+                            RoundedRectangle(cornerRadius: 50)
+                                .ignoresSafeArea()
+                                .foregroundColor(.PGred)
+                            VStack {
+                                
+                            
+                            Text("Welcome")
+                                .bold()
+                                .font(.largeTitle)
+                                .foregroundColor(.black)
+                                .padding(.top, 20)
+                                .padding(.horizontal, 20)
+                            
+                            Spacer()
+                            
+                            // Bottom with confirmation button
+                                ConfirmationButton(title: "Get Started", type: .primaryLargeConfirmation, foregroundColor: .PGred, backgroundColor: .white, backgroundOpacity: 0) {
+                                    // Your action here
+                                    nextButtonPressed()
+                                }
+                            }
+                        }
+                    }
                 }
-                .background(RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.black, lineWidth: 1))
-                .padding()
-                Spacer()
+            }
+        }
+    }
+ 
+        
+        var monthlyInPerMonth: some View {
+            GeometryReader { geometry in
+                BackgroundView(geometry: geometry)
+                // ... Your other content can go here, layered on top of the background
+                VStack(alignment:.center) {
+                    
+                    Spacer()
+                    
+                    VStack{
+                        
+                        
+                        Text("How much do you make a Month?")
+                            .bold()
+                            .font(.largeTitle)
+                            .multilineTextAlignment(.center)
+                            .padding(.horizontal, 20)
+                        
+                        Spacer()
+                        
+                        TextFieldWithIcon(text: $viewModel.monthlyInPerMonthString, placeholder: "Enter Amount Here", icon: .custom(.oval), isSecure: false,
+                                          backgroundColor: .gray.opacity(0.2))
+                        .padding(.horizontal)
+                        
+                        Spacer()
+                        
+                        ConfirmationButton(title: "Next", type: .primaryLargeConfirmation, foregroundColor: .white, backgroundColor: .PGred) {
+                            
+                            nextButtonPressed()
+                            
+                        }
+                        .padding(.horizontal)
+                    }
+                    .frame(height: geometry.size.height / 2)
+                }
                 
             }
         }
         
         var billExpenes: some View {
-                VStack(alignment: .leading) {
-                    Text("How much are your Expenses? ")
-                        .bold()
-                        .padding(.leading, 20)
-                        .padding(.bottom, 12)
-                        .foregroundColor(.black)
-                    ZStack {
-                        TextFieldWithIcon(text: $viewModel.billExpenesString, placeholder: "", icon: .custom(.oval), isSecure: false)
-                    }
-                    .background(RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.black, lineWidth: 1))
-                    .padding()
+            GeometryReader { geometry in
+                BackgroundView(geometry: geometry)
+                // ... Your other content can go here, layered on top of the background
+                VStack(alignment:.center) {
+                    
                     Spacer()
-                        .frame(height: 60)
+                    
+                    VStack{
+                        
+                        
+                        Text("How much do you pay in Bills per month?")
+                            .bold()
+                            .font(.largeTitle)
+                            .multilineTextAlignment(.center)
+                            .padding(.horizontal, 20)
+                        
+                        Spacer()
+                        
+                        TextFieldWithIcon(text: $viewModel.billExpenesString, placeholder: "Enter Amount Here", icon: .custom(.oval), isSecure: false,
+                                          backgroundColor: .gray.opacity(0.2))
+                        .padding(.horizontal)
+                        
+                        Spacer()
+                        
+                        ConfirmationButton(title: "Next", type: .primaryLargeConfirmation, foregroundColor: .white, backgroundColor: .PGred) {
+                            
+                            nextButtonPressed()
+                            
+                        }
+                        .padding(.horizontal)
+                    }
+                    .frame(height: geometry.size.height / 2)
                 }
+                
+            }
         }
-
         
         var savingGoal: some View {
-            VStack(alignment: .leading) {
-                Text("Let's Establish a Saving Goal and Date")
-                    .bold()
-                    .padding(.bottom, 12)
-                    .foregroundColor(.black)
-                
-                ZStack {
-                    TextFieldWithIcon(text: $viewModel.savingGoalString, placeholder: "", icon: .custom(.oval), isSecure: false)
-                }
-                .background(RoundedRectangle(cornerRadius: 10)
-                .stroke(Color.black, lineWidth: 1))
-                .padding()
-                
-                ZStack {
-                    VStack {
-                        Text("Select Date You would liek to reach Saving Goal")
-                            .bold()
-                            .padding(.bottom, 12)
-                            .foregroundColor(.black)
-
-                        DatePicker("Select a Date:", selection: $viewModel.goalDate, displayedComponents: .date)
-                            .datePickerStyle(GraphicalDatePickerStyle())
-                            .padding()
-                    }
-                }
-                
-                Spacer()
-            }
-            .padding(.horizontal, 20)
-        }
-
-        
-        var completedRegistration: some View {
-                VStack(alignment: .leading) {
-                    HStack {
-                        Spacer()
-                        IconImage(Icon.custom(.oval))
-                            .padding(30)
-                        Spacer()
-                    }
-                    .padding()
-                    
-                    Text(viewModel.completedRegistration)
-                        .foregroundColor(.black)
-                        .padding(.bottom)
-                    
-                    Text("This will be your Weekly Allowance: ")
-                        .bold()
-                        .font(.title3)
-                        .foregroundColor(.black)
-                        .padding(.bottom)
+            GeometryReader { geometry in
+                BackgroundView(geometry: geometry)
+                // ... Your other content can go here, layered on top of the background
+                VStack(alignment:.center) {
                     
                     Spacer()
                     
-//                    ForEach(Array(viewModel.completedRegistration), id: \.self) { character in
-//                        VStack(alignment: .leading) {
-//                            Text(String(character))
-//                                .bold()
-//                                .foregroundColor(.black)
-//                                .padding(.bottom, 2)
-//                        }
-//                    }
+                    VStack{
+                        
+                        
+                        Text("What is your Saving goal?")
+                            .bold()
+                            .font(.largeTitle)
+                            .multilineTextAlignment(.center)
+                        
+                        Spacer()
+                        
+                        TextFieldWithIcon(text: $viewModel.savingGoalString, placeholder: "Enter Amount Here", icon: .custom(.oval), isSecure: false,
+                                          backgroundColor: .gray.opacity(0.2))
+                        .padding(.horizontal)
+                        
+                        DatePicker("Select a Date:", selection: $viewModel.goalDate, displayedComponents: .date)
+                            .datePickerStyle(.compact)
+                            .padding(.horizontal, 60)
+                        
+                        Spacer()
+                        
+                        ConfirmationButton(title: "Next", type: .primaryLargeConfirmation, foregroundColor: .white, backgroundColor: .PGred) {
+                            
+                            nextButtonPressed()
+                            
+                        }
+                        .padding(.horizontal)
+                    }
+                    .frame(height: geometry.size.height / 2)
                 }
-                .padding(.horizontal, 20)
+                
+            }
+        }
+        
+        var completedRegistration: some View {
+            ZStack {
+                (LinearGradient(gradient: Gradient(colors: [Color.Primary, Color.PGred]), startPoint: .top, endPoint: .bottom))
+                    .ignoresSafeArea(.all)
+                VStack{
+                    
+                    Spacer()
+                    
+                    Text("$$$")
+                        .font(.largeTitle)
+                        .bold()
+                        .italic()
+                    
+                    
+                    Spacer()
+                    
+                    Text("Is your Weekly Allowance")
+                    
+                    Spacer()
+                    
+                    Text("If you follow this you will reach you goal by \(viewModel.goalDate)")
+                    
+                    Spacer()
+                    
+                    ConfirmationButton(title: "Continue", type: .primaryLargeConfirmation, foregroundColor: .PGred, backgroundColor: .white) {
+                        
+                        nextButtonPressed()
+                    }
+                    .padding()
+                }
+            }
+    
+          
         }
         
         
         var body: some View {
             VStack {
-                titleGroup
+                //                titleGroup
                 
                 ZStack {
-                    Color.primaryPurple
+                    //Color.red
                     
                     TabView(selection: $selectedPage) {
-                        monthlyInPerMonth
+                        getStartedPage
                             .background(Color.white)
                             .tag(0)
                         
-                        billExpenes
+                        monthlyInPerMonth
                             .background(Color.white)
                             .tag(1)
                         
-                        savingGoal
+                        billExpenes
                             .background(Color.white)
                             .tag(2)
                         
-                        completedRegistration
+                        savingGoal
                             .background(Color.white)
                             .tag(3)
-            
+                        
+                        completedRegistration
+                            .background(Color.white)
+                            .tag(4)
+                        
                     }.background(.clear)
-                    
-                    VStack {
-            
-                        ConfirmationButton(title: selectedPage == 3 ? "Complete" : "Next", type: .primaryLargeConfirmation) {
-                            nextButtonPressed()
-                            
-                        }
-                        .padding()
-                    }
                     
                 }
             }
@@ -308,42 +390,80 @@ class RegistrationModalViewModel: ObservableObject {
         }
     }
     
-struct RegistrationModal_Previews: PreviewProvider {
-    static var previews: some View {
-        RegistrationModal(viewModel: RegistrationModalViewModel(appCoordinator: AppCoordinator(serviceManager: ServiceManager())))
-    }
-}
-
-
-struct WhiteDatePicker: UIViewRepresentable {
-    @Binding var date: Date
-    var onDone: () -> Void
-    
-    func makeUIView(context: Context) -> UIDatePicker {
-        let datePicker = UIDatePicker()
-        datePicker.datePickerMode = .date
-        datePicker.setValue(UIColor.white, forKey: "textColor")
-        return datePicker
-    }
-    
-    func updateUIView(_ uiView: UIDatePicker, context: Context) {
-        uiView.date = date
-    }
-    
-    func makeCoordinator() -> Coordinator {
-        Coordinator(self)
-    }
-    
-    class Coordinator: NSObject {
-        var parent: WhiteDatePicker
-        
-        init(_ parent: WhiteDatePicker) {
-            self.parent = parent
-        }
-        
-        @objc func done() {
-            parent.onDone()
+    struct RegistrationModal_Previews: PreviewProvider {
+        static var previews: some View {
+            Group {
+                
+                // Preview for the first page (Monthly Income)
+                RegistrationModal(viewModel: RegistrationModalViewModel(appCoordinator: AppCoordinator(serviceManager: ServiceManager())), initialPage: 0)
+                    .previewDisplayName("Get Started")
+                
+                // Preview for the first page (Monthly Income)
+                RegistrationModal(viewModel: RegistrationModalViewModel(appCoordinator: AppCoordinator(serviceManager: ServiceManager())), initialPage: 1)
+                    .previewDisplayName("Monthly Income Page")
+                
+                // Preview for the second page (Bill Expenses)
+                RegistrationModal(viewModel: RegistrationModalViewModel(appCoordinator: AppCoordinator(serviceManager: ServiceManager())), initialPage: 2)
+                    .previewDisplayName("Bill Expenses Page")
+                
+                // Preview for the third page (Saving Goal)
+                RegistrationModal(viewModel: RegistrationModalViewModel(appCoordinator: AppCoordinator(serviceManager: ServiceManager())), initialPage: 3)
+                    .previewDisplayName("Saving Goal Page")
+                
+                // Preview for the fourth page (Completed)
+                RegistrationModal(viewModel: RegistrationModalViewModel(appCoordinator: AppCoordinator(serviceManager: ServiceManager())), initialPage: 4)
+                    .previewDisplayName("Completed")
+            }
         }
     }
-}
-
+    
+    
+    
+    
+    struct WhiteDatePicker: UIViewRepresentable {
+        @Binding var date: Date
+        var onDone: () -> Void
+        
+        func makeUIView(context: Context) -> UIDatePicker {
+            let datePicker = UIDatePicker()
+            datePicker.datePickerMode = .date
+            datePicker.setValue(UIColor.white, forKey: "textColor")
+            return datePicker
+        }
+        
+        func updateUIView(_ uiView: UIDatePicker, context: Context) {
+            uiView.date = date
+        }
+        
+        func makeCoordinator() -> Coordinator {
+            Coordinator(self)
+        }
+        
+        class Coordinator: NSObject {
+            var parent: WhiteDatePicker
+            
+            init(_ parent: WhiteDatePicker) {
+                self.parent = parent
+            }
+            
+            @objc func done() {
+                parent.onDone()
+            }
+        }
+    }
+    
+    func BackgroundView(geometry: GeometryProxy) -> some View {
+        ZStack {
+            Color.PGred
+                .ignoresSafeArea(.all)
+            
+            VStack {
+                Spacer()
+                    .frame(height: geometry.size.height / 2)
+                
+                RoundedRectangle(cornerRadius: 50, style: .circular)
+                    .foregroundColor(.white)
+            }
+            .ignoresSafeArea(.all)
+        }
+    }

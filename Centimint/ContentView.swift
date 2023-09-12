@@ -79,7 +79,8 @@ struct ContentView: View {
 //                            CommandDetailView(viewModel: CommandDetailViewModel(appCoordinator: appCoordinator, command: command, userCommand: nil))
 //                        }
                     case .registration:
-                        RegistrationModal(viewModel: RegistrationModalViewModel(appCoordinator: AppCoordinator(serviceManager: ServiceManager())))
+                        RegistrationModal(viewModel: RegistrationModalViewModel(appCoordinator: appCoordinator))
+                        
                     case .calendar(let viewModel):
                         CalendarView(viewModel: viewModel)
 //                    case .payWall:
