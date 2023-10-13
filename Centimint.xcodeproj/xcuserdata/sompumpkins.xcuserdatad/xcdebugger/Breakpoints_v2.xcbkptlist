@@ -169,6 +169,126 @@
                   endingLineNumber = "27"
                   offsetFromSymbolStart = "988">
                </Location>
+               <Location
+                  uuid = "C9836BDA-899C-43BD-850E-649DBF970B2F - 5dae1015e39d38ea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of Centimint.RegistrationModalViewModel.goalDate : Foundation.Date"
+                  moduleName = "Centimint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sompumpkins/Documents/WorkSpace/Centimint/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "C9836BDA-899C-43BD-850E-649DBF970B2F - f2590945bc26a1fa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Centimint.RegistrationModalViewModel.goalDate.getter : Foundation.Date"
+                  moduleName = "Centimint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sompumpkins/Documents/WorkSpace/Centimint/Centimint/View/Screens/Models/RegistrationModal/RegistrationModal.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "C9836BDA-899C-43BD-850E-649DBF970B2F - c740d2452a708145"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Centimint.RegistrationModalViewModel.goalDate.setter : Foundation.Date"
+                  moduleName = "Centimint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sompumpkins/Documents/WorkSpace/Centimint/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "C9836BDA-899C-43BD-850E-649DBF970B2F - 864cfbef9412c871"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Centimint.RegistrationModalViewModel.goalDate.modify : Foundation.Date with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Centimint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sompumpkins/Documents/WorkSpace/Centimint/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "C9836BDA-899C-43BD-850E-649DBF970B2F - d9be88057583e0d8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Centimint.RegistrationModalViewModel.$goalDate.getter : Combine.Published&lt;Foundation.Date&gt;.Publisher"
+                  moduleName = "Centimint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sompumpkins/Documents/WorkSpace/Centimint/Centimint/View/Screens/Models/RegistrationModal/RegistrationModal.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "C9836BDA-899C-43BD-850E-649DBF970B2F - 44da82dd98be0067"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Centimint.RegistrationModalViewModel.$goalDate.setter : Combine.Published&lt;Foundation.Date&gt;.Publisher"
+                  moduleName = "Centimint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sompumpkins/Documents/WorkSpace/Centimint/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "C9836BDA-899C-43BD-850E-649DBF970B2F - f9a2d0e2fe32c366"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Centimint.RegistrationModalViewModel.$goalDate.modify : Combine.Published&lt;Foundation.Date&gt;.Publisher"
+                  moduleName = "Centimint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sompumpkins/Documents/WorkSpace/Centimint/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "C9836BDA-899C-43BD-850E-649DBF970B2F - 5db2feb4bc84d06f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Centimint.RegistrationModalViewModel.$goalDate.modify : Combine.Published&lt;Foundation.Date&gt;.Publisher with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Centimint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sompumpkins/Documents/WorkSpace/Centimint/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>

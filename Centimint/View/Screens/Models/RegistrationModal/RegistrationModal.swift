@@ -156,49 +156,71 @@ struct RegistrationModal: View {
     }
     
     
-    
     var getStartedPage: some View {
         GeometryReader { geometry in
-            BackgroundView(geometry: geometry)
-            VStack {
+            ZStack {
+                // The BackgroundView component
+                BackgroundView2()
                 
-                ZStack {
-                    Color.white
-                        .ignoresSafeArea(.all)
+                // Your original content
+                VStack(spacing: 20) {
+                    // App Logo
+                    Image(systemName: "a.circle") // Replace with your logo
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 50, height: 50)
                     
-                    VStack {
-                        
-                        Spacer()
-                            .frame(height: geometry.size.height / 2)
-                        ZStack{
-                            
-                            RoundedRectangle(cornerRadius: 50)
-                                .ignoresSafeArea()
-                                .foregroundColor(.PGred)
-                            VStack {
-                                
-                            
-                            Text("Welcome")
+                    // App Name
+                    Text("Budget Simpler")
+                        .font(.largeTitle)
+                        .bold()
+                    
+                    // Illustration
+                    Image("Illustration") // Replace "Illustration" with the name of your image in the asset catalog
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: geometry.size.width * 0.7)
+                    
+                    Spacer(minLength: 20) // Adjust spacing as needed
+                    
+                    VStack(spacing: 20) {
+                        // App Description
+                        VStack(spacing: 10) {
+                            Text("Budget Simpler")
+                                .font(.title)
                                 .bold()
-                                .font(.largeTitle)
-                                .foregroundColor(.black)
-                                .padding(.top, 20)
-                                .padding(.horizontal, 20)
+                                .foregroundColor(.white)
                             
-                            Spacer()
-                            
-                            // Bottom with confirmation button
-                                ConfirmationButton(title: "Get Started", type: .primaryLargeConfirmation, foregroundColor: .PGred, backgroundColor: .white, backgroundOpacity: 0) {
-                                    // Your action here
-                                    nextButtonPressed()
-                                }
-                            }
+                            Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare.")
+                                .multilineTextAlignment(.center)
+                                .foregroundColor(.white)
+                        }
+                        
+                        // Get Started Button
+                        Button(action: {
+                            // Your action here
+                            nextButtonPressed()
+                        }) {
+                            Text("Get Started")
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .background(Color.blue) // Change to desired color
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
                         }
                     }
+                    .background(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
+                    .cornerRadius(20)
                 }
+                .padding()
             }
+            .background(Color.white.ignoresSafeArea())
         }
     }
+
+
+
+
  
         
         var monthlyInPerMonth: some View {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F0A1BCC2AD8B7CC00C82679 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0A1BCB2AD8B7CC00C82679 /* BackgroundView.swift */; };
 		4F208C312A9BCF39005F490A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F208C302A9BCF39005F490A /* Constants.swift */; };
 		4F208C332A9BE724005F490A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F208C322A9BE724005F490A /* GoogleService-Info.plist */; };
 		4F208C502A9E164D005F490A /* WeeklyCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F208C4F2A9E164D005F490A /* WeeklyCalendarView.swift */; };
@@ -87,6 +88,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F0A1BCB2AD8B7CC00C82679 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		4F208C302A9BCF39005F490A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4F208C322A9BE724005F490A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4F208C4F2A9E164D005F490A /* WeeklyCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyCalendarView.swift; sourceTree = "<group>"; };
@@ -434,6 +436,7 @@
 				4F29EE672A99C50500F469F9 /* ProgressBar.swift */,
 				4F29EE6A2A99C50500F469F9 /* CardBackground.swift */,
 				4F29EE6C2A99C50500F469F9 /* DottedLine.swift */,
+				4F0A1BCB2AD8B7CC00C82679 /* BackgroundView.swift */,
 			);
 			path = Atoms;
 			sourceTree = "<group>";
@@ -636,6 +639,7 @@
 				4F29EE852A99C50500F469F9 /* NewIntroducationView.swift in Sources */,
 				4FDC28E22A9AB9E600A6680A /* StageSelectionView.swift in Sources */,
 				4F29EEA12A99C50500F469F9 /* CardBackground.swift in Sources */,
+				4F0A1BCC2AD8B7CC00C82679 /* BackgroundView.swift in Sources */,
 				4F29EE7B2A99C50500F469F9 /* PlayerView.swift in Sources */,
 				4FDC28D72A9A997600A6680A /* Color+PuppySchool.swift in Sources */,
 				4F208C312A9BCF39005F490A /* Constants.swift in Sources */,

@@ -20,7 +20,7 @@ struct BadgeBackground_Previews: PreviewProvider {
                 }
                 .padding()
             }
-            .background(BadgeBackground(color: .blueGray, cornerRadius: 40))
+            .background(BadgeBackground(color: .red , cornerRadius: 40))
             .frame(width: 200)
             
             VStack {

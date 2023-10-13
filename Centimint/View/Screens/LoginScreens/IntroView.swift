@@ -84,7 +84,6 @@ struct IntroView: View {
                 .foregroundColor(.white)
             } else {
                 LoginView(viewModel: LoginViewModel(appCoordinator: viewModel.appCoordinator, isSignUp: viewModel.newUser))
-                    .frame(width:.infinity, height: .infinity)
                     .ignoresSafeArea(.all)
             }
         }

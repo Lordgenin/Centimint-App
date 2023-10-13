@@ -18,86 +18,102 @@ struct HomeView: View {
     @ObservedObject var viewModel: HomeViewModel
     
     @StateObject private var weeklyCalendarViewModel = WeeklyCalendarViewModel(appCoordinator: AppCoordinator(serviceManager: ServiceManager()))
-
+    
     
     var topBar: some View {
         HStack {
-            WeeklyCalendarView(viewModel: weeklyCalendarViewModel)
-                .padding()
-            
-            Text("iconhere")
-            
+            Image(systemName: "arrow.left") // <- Use SF symbols for this
+            Text("Sep 1 - Sep 15")
+                .bold()
+            Spacer()
+            Text("iconhere") // Replace with actual settings icon
+            Image(systemName: "arrow.right") // <- Use SF symbols for this
         }
+        .padding()
     }
     
     var midBar: some View {
-        VStack {
+        VStack(alignment: .leading) {
+            Text("$4000 - $800")
+                .bold()
+                .padding(.bottom, 5)
             
-            CardBackground(color: .PGred)
-            
+            ProgressBar(progress: 0.22, color: Color.blue) // Update color and progress as needed
+                .frame(height: 20)
         }
+        .padding()
+        .background(Color.blue.opacity(0.1))
+        .cornerRadius(10)
     }
+
+    
     var overviewBar: some View {
-        ScrollView{
-            VStack {
-                
-                CardBackground(color: .PGred)
-                CardBackground(color: .PGred)
-                CardBackground(color: .PGred)
-                
+        VStack(spacing: 20) {
+
+           
+                ForEach(0..<5) { _ in
+                    // Here, I'm using the ConfirmationButton as an example.
+                    // You may want to customize or create a new type to represent each purchase card.
+                    ConfirmationButton(title: "Item Name $30", type: .primaryLargeConfirmation) {
+                        print("Item tapped")
+                    }
+                    .padding(.vertical, 5)
+                }
                 
             }
-            .padding()
+           .padding()
+       }
+
+    var addButton: some View {
+           ConfirmationButton(title: "+", type: .animatedCircleButton(icon: .sfSymbol(.plus, color: .black)), foregroundColor: .blue) {
+               print("Add new item")
+           }
+           .padding(.vertical, 10)
+       }
+    
+    var bottomBar: some View {
+        HStack {
+            ConfirmationButton(title: "Allowance", type: .primaryLargeConfirmation) {
+                print("Allowance tapped")
+            }
+           
+            ConfirmationButton(title: "Insights", type: .primaryLargeConfirmation) {
+                print("Insights tapped")
+            }
         }
     }
-    
-//
-//    var inProgressModule: some View {
-//        VStack {
-//            HStack {
-//                VStack(alignment: .leading) {
-//                    Text("Currently Learning")
-//                        .font(.subheadline)
-//                        .foregroundColor(.black)
-//                        .padding(.bottom, 8)
-//
-//
-//                }
-//
-//            }
-//            Spacer()
-//        }
-//        .padding(.bottom, 10)
-//
-//        return ConfirmationButton(title: "Continue Training", type: .primaryLargeConfirmation) {
-//        }
-//        .padding()
-//    }
-    
+        
     var body: some View {
-      
-            ZStack {
-                VStack {
-                    topBar
-                    midBar
+       
+            VStack(spacing: 20) {
+                topBar
+                midBar
+                
+                Text("Purchased this week")
+                    .font(.title3)
+                    .bold()
+                    .foregroundColor(Color.black)
+                
+                ScrollView {
                     overviewBar
                 }
+                addButton
+                bottomBar
             }
-            
-            ForEach(viewModel.titles, id: \.self) { title in
-                HStack {
-                    Text(title)
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding(.vertical)
-                    Spacer()
-                }
-                
-            }
-            .padding(.leading)
-            Spacer()
-                .frame(height: 100)
-                .background(.clear)
+            .padding()
+        
+                    
+                    ForEach(viewModel.titles, id: \.self) { title in
+                        HStack {
+                            Text(title)
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .padding(.vertical)
+                            Spacer()
+                        }
+                        .padding(.leading)
+                    }
+        
         .onAppear {
             let userService = UserService.sharedInstance
             delay(0) {
@@ -107,11 +123,13 @@ struct HomeView: View {
             }
         }
     }
-    
+}
+
+
     
     struct HomeView_Previews: PreviewProvider {
         static var previews: some View {
             HomeView(viewModel: HomeViewModel(appCoordinator: AppCoordinator(serviceManager: ServiceManager()), serviceManager: ServiceManager()))
         }
     }
-}
+
