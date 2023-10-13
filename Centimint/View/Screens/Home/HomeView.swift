@@ -42,7 +42,7 @@ struct HomeView: View {
                 .frame(height: 20)
         }
         .padding()
-        .background(Color.blue.opacity(0.1))
+        .background( LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .top, endPoint: .bottom).opacity(0.5))
         .cornerRadius(10)
     }
 
@@ -65,7 +65,7 @@ struct HomeView: View {
        }
 
     var addButton: some View {
-           ConfirmationButton(title: "+", type: .animatedCircleButton(icon: .sfSymbol(.plus, color: .black)), foregroundColor: .blue) {
+        ConfirmationButton(title: "+", type: .animatedCircleButton(icon: .sfSymbol(.plus, color: .black))) {
                print("Add new item")
            }
            .padding(.vertical, 10)
@@ -73,12 +73,12 @@ struct HomeView: View {
     
     var bottomBar: some View {
         HStack {
-            ConfirmationButton(title: "Allowance", type: .primaryLargeConfirmation) {
-                print("Allowance tapped")
+            ConfirmationButton(title: "Allowance", type: .primaryLargeConfirmationGradientText) {
             }
            
-            ConfirmationButton(title: "Insights", type: .primaryLargeConfirmation) {
-                print("Insights tapped")
+            
+           ConfirmationButton(title: "Insights", type: .primaryLargeConfirmationGradient) {
+
             }
         }
     }

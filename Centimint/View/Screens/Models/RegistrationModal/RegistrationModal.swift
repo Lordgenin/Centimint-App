@@ -171,7 +171,7 @@ struct RegistrationModal: View {
                         .frame(width: 50, height: 50)
                     
                     // App Name
-                    Text("Budget Simpler")
+                    Text(Constants.Appname)
                         .font(.largeTitle)
                         .bold()
                     
@@ -186,7 +186,7 @@ struct RegistrationModal: View {
                     VStack(spacing: 20) {
                         // App Description
                         VStack(spacing: 10) {
-                            Text("Budget Simpler")
+                            Text(Constants.Appname)
                                 .font(.title)
                                 .bold()
                                 .foregroundColor(.white)
@@ -197,24 +197,12 @@ struct RegistrationModal: View {
                         }
                         
                         // Get Started Button
-                        Button(action: {
-                            // Your action here
-                            nextButtonPressed()
-                        }) {
-                            Text("Get Started")
-                                .padding()
-                                .frame(maxWidth: .infinity)
-                                .background(Color.blue) // Change to desired color
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                        }
+                        ConfirmationButton(title: "Get Started", type: .primaryLargeConfirmationGradientText, action: nextButtonPressed)
+                    
                     }
-                   // .background(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
-                  //  .cornerRadius(20)
                 }
                 .padding()
             }
-          //  .background(Color.white.ignoresSafeArea())
         }
     }
 
@@ -237,32 +225,29 @@ struct RegistrationModal: View {
                         .frame(width: 60, height: 60)
                         .padding(.top, 20) // Adjust padding as needed
                     
-                    Text("Budget Simpler")
+                    Text(Constants.Appname)
                         .bold()
                         .font(.title)
                         .foregroundColor(.white)
                         .padding(.top, 10)
                 }
                 Spacer()
-                VStack(spacing: 20) { // For adding space between each element inside
+                VStack(spacing: 70) { // For adding space between each element inside
                     Text("How much do you make a month?")
                         .bold()
                         .font(.title2)
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 20)
 
-                    TextFieldWithIcon(text: $viewModel.monthlyInPerMonthString, placeholder: "Enter amount", icon: .custom(.oval), isSecure: false,
+                    TextFieldWithIcon(text: $viewModel.monthlyInPerMonthString, placeholder: "Enter Amount Here", icon: .custom(.oval), isSecure: false,
                                       backgroundColor: .gray.opacity(0.2))
                     .padding(.horizontal, 40)
 
-                    ConfirmationButton(title: "Next", type: .primaryLargeConfirmation, foregroundColor: .white,backgroundColor: .gradient(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .top, endPoint: .bottom)) ) {
+                    ConfirmationButton(title: "Next", type: .primaryLargeConfirmationGradient)  {
                         nextButtonPressed()
                     }
                     .padding(.horizontal, 40)
                 }
-                .background(Color.white) // This ensures the background of the VStack is white
-                .cornerRadius(50, corners: .top) // Add corner radius to the top
-                .edgesIgnoringSafeArea(.bottom) // Ensure it stretches to the bottom edge
             }
         }
     }
@@ -271,31 +256,41 @@ struct RegistrationModal: View {
         
         var billExpenes: some View {
             GeometryReader { geometry in
-                BackgroundView(geometry: geometry)
+                BackgroundView2()
                 // ... Your other content can go here, layered on top of the background
-                VStack(alignment:.center) {
+                VStack {
+                    Spacer(minLength: 0) // Push everything to the bottom
                     
-                    Spacer()
-                    
-                    VStack{
+                    VStack {
+                        Image("budgetIcon") // Assuming you have an image named "budgetIcon" in your assets
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 60, height: 60)
+                            .padding(.top, 20) // Adjust padding as needed
                         
+                        Text(Constants.Appname)
+                            .bold()
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .padding(.top, 10)
+                    }
+                    Spacer()
+                    VStack(spacing: 70) { // For adding space between each element inside
                         
                         Text("How much do you pay in Bills per month?")
                             .bold()
-                            .font(.largeTitle)
+                            .font(.title2)
                             .multilineTextAlignment(.center)
                             .padding(.horizontal, 20)
                         
-                        Spacer()
+           
                         
                         TextFieldWithIcon(text: $viewModel.billExpenesString, placeholder: "Enter Amount Here", icon: .custom(.oval), isSecure: false,
                                           backgroundColor: .gray.opacity(0.2))
                         .padding(.horizontal)
                         
-                        Spacer()
-                        
-                        ConfirmationButton(title: "Next", type: .primaryLargeConfirmation, foregroundColor: .white,backgroundColor: .gradient(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .top, endPoint: .bottom)) )  {
-                            
+                        ConfirmationButton(title: "Next", type: .primaryLargeConfirmationGradient)  {
+
                             nextButtonPressed()
                             
                         }
@@ -309,22 +304,33 @@ struct RegistrationModal: View {
         
         var savingGoal: some View {
             GeometryReader { geometry in
-                BackgroundView(geometry: geometry)
+                BackgroundView2()
                 // ... Your other content can go here, layered on top of the background
-                VStack(alignment:.center) {
+                VStack {
+                    Spacer(minLength: 0) // Push everything to the bottom
                     
-                    Spacer()
-                    
-                    VStack{
+                    VStack {
+                        Image("budgetIcon") // Assuming you have an image named "budgetIcon" in your assets
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 60, height: 60)
+                            .padding(.top, 20) // Adjust padding as needed
                         
+                        Text(Constants.Appname)
+                            .bold()
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .padding(.top, 10)
+                    }
+                    Spacer()
+                    VStack(spacing: 40) {
                         
                         Text("What is your Saving goal?")
                             .bold()
-                            .font(.largeTitle)
+                            .font(.title2)
                             .multilineTextAlignment(.center)
                         
-                        Spacer()
-                        
+
                         TextFieldWithIcon(text: $viewModel.savingGoalString, placeholder: "Enter Amount Here", icon: .custom(.oval), isSecure: false,
                                           backgroundColor: .gray.opacity(0.2))
                         .padding(.horizontal)
@@ -333,10 +339,8 @@ struct RegistrationModal: View {
                             .datePickerStyle(.compact)
                             .padding(.horizontal, 60)
                         
-                        Spacer()
-                        
-                        ConfirmationButton(title: "Next", type: .primaryLargeConfirmation, foregroundColor: .white,backgroundColor: .gradient(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .top, endPoint: .bottom)) )  {
-                            
+                        ConfirmationButton(title: "Next", type: .primaryLargeConfirmationGradient)  {
+
                             nextButtonPressed()
                             
                         }
@@ -347,41 +351,47 @@ struct RegistrationModal: View {
                 
             }
         }
-        
-        var completedRegistration: some View {
-            ZStack {
-                (LinearGradient(gradient: Gradient(colors: [Color.Primary, Color.PGred]), startPoint: .top, endPoint: .bottom))
-                    .ignoresSafeArea(.all)
-                VStack{
-                    
-                    Spacer()
-                    
-                    Text("$$$")
-                        .font(.largeTitle)
-                        .bold()
-                        .italic()
-                    
-                    
-                    Spacer()
-                    
-                    Text("Is your Weekly Allowance")
-                    
-                    Spacer()
-                    
-                    Text("If you follow this you will reach you goal by \(viewModel.goalDate)")
-                    
-                    Spacer()
-                    
-                    ConfirmationButton(title: "Next", type: .primaryLargeConfirmation, foregroundColor: .white,backgroundColor: .gradient(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .top, endPoint: .bottom)) )  {
-                        
-                        nextButtonPressed()
-                    }
-                    .padding()
+    var completedRegistration: some View {
+        ZStack {
+            LinearGradient(gradient: Gradient(colors: [Color.Primary, Color.PGred]), startPoint: .top, endPoint: .bottom)
+                .ignoresSafeArea(.all)
+            
+            VStack(spacing: 16) {
+                Spacer()
+                
+                Image(systemName: "wallet.pass") // placeholder for the budget icon
+                    .resizable()
+                    .frame(width: 60, height: 60)
+                    .foregroundColor(.white)
+                
+                Text("Budget Simpler")
+                    .font(.title)
+                    .foregroundColor(.white)
+                
+                Text("$$$")
+                    .font(.system(size: 60))
+                    .bold()
+                    .foregroundColor(.white)
+                
+                Text("is your weekly allowance.")
+                    .foregroundColor(.white)
+                
+                Text("If you follow this you will reach your goal by \(viewModel.goalDate)")
+                    .foregroundColor(.white)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal)
+                
+                Spacer()
+                
+                ConfirmationButton(title: "Continue", type: .primaryLargeConfirmationGradientText)  {
+                    nextButtonPressed()
                 }
+                .padding()
             }
-    
-          
+            .padding(.top, 50) // provides padding at the top for better alignment
         }
+    }
+
         
         
         var body: some View {
