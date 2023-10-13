@@ -7,11 +7,16 @@ enum ButtonType {
     case loading
 }
 
+enum BackgroundStyle {
+    case color(Color)
+    case gradient(LinearGradient)
+}
+
 struct ConfirmationButton: View {
     var title: String
     var type: ButtonType
     var foregroundColor: Color? = .white
-    var backgroundColor: Color? = .black
+    var backgroundColor:  BackgroundStyle? = .color(.black)
     var backgroundOpacity: Double? = 0.2
     @State var isLoading: Bool = false
 
@@ -30,9 +35,22 @@ struct ConfirmationButton: View {
                     .foregroundColor(foregroundColor)
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(backgroundColor)
+                    .background(Color.clear)  // use a clear background for the Text itself
+                    .overlay(
+                        Group {
+                            switch backgroundColor {
+                            case .color(let color):
+                                color
+                            case .gradient(let gradient):
+                                gradient
+                            case .none:
+                                Color.clear
+                            }
+                        }
+                    )
                     .cornerRadius(18)
             }
+
         case .animatedCircleButton(let icon):
             Button(action: {
                             if isExpanded {

@@ -145,7 +145,7 @@ class AppCoordinator: ObservableObject {
     }
     func showHomeScreen() {
         currentScreen = .home
-        self.serviceManager.showTabBar = true
+        self.serviceManager.showTabBar = false
     }
     func showLogScreen() {
         currentScreen = .log
