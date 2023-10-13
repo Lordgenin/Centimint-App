@@ -160,7 +160,7 @@ struct RegistrationModal: View {
         GeometryReader { geometry in
             ZStack {
                 // The BackgroundView component
-                BackgroundView2()
+                BackgroundView2(invertColors: true)
                 
                 // Your original content
                 VStack(spacing: 20) {
@@ -209,12 +209,12 @@ struct RegistrationModal: View {
                                 .cornerRadius(10)
                         }
                     }
-                    .background(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
-                    .cornerRadius(20)
+                   // .background(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
+                  //  .cornerRadius(20)
                 }
                 .padding()
             }
-            .background(Color.white.ignoresSafeArea())
+          //  .background(Color.white.ignoresSafeArea())
         }
     }
 
@@ -223,43 +223,51 @@ struct RegistrationModal: View {
 
  
         
-        var monthlyInPerMonth: some View {
-            GeometryReader { geometry in
-                BackgroundView(geometry: geometry)
-                // ... Your other content can go here, layered on top of the background
-                VStack(alignment:.center) {
-                    
-                    Spacer()
-                    
-                    VStack{
-                        
-                        
-                        Text("How much do you make a Month?")
-                            .bold()
-                            .font(.largeTitle)
-                            .multilineTextAlignment(.center)
-                            .padding(.horizontal, 20)
-                        
-                        Spacer()
-                        
-                        TextFieldWithIcon(text: $viewModel.monthlyInPerMonthString, placeholder: "Enter Amount Here", icon: .custom(.oval), isSecure: false,
-                                          backgroundColor: .gray.opacity(0.2))
-                        .padding(.horizontal)
-                        
-                        Spacer()
-                        
-                        ConfirmationButton(title: "Next", type: .primaryLargeConfirmation, foregroundColor: .white, backgroundColor: .PGred) {
-                            
-                            nextButtonPressed()
-                            
-                        }
-                        .padding(.horizontal)
-                    }
-                    .frame(height: geometry.size.height / 2)
-                }
+    var monthlyInPerMonth: some View {
+        GeometryReader { geometry in
+            BackgroundView2()
+
+            VStack {
+                Spacer(minLength: 0) // Push everything to the bottom
                 
+                VStack {
+                    Image("budgetIcon") // Assuming you have an image named "budgetIcon" in your assets
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 60, height: 60)
+                        .padding(.top, 20) // Adjust padding as needed
+                    
+                    Text("Budget Simpler")
+                        .bold()
+                        .font(.title)
+                        .foregroundColor(.white)
+                        .padding(.top, 10)
+                }
+                Spacer()
+                VStack(spacing: 20) { // For adding space between each element inside
+                    Text("How much do you make a month?")
+                        .bold()
+                        .font(.title2)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 20)
+
+                    TextFieldWithIcon(text: $viewModel.monthlyInPerMonthString, placeholder: "Enter amount", icon: .custom(.oval), isSecure: false,
+                                      backgroundColor: .gray.opacity(0.2))
+                    .padding(.horizontal, 40)
+
+                    ConfirmationButton(title: "Next", type: .primaryLargeConfirmation, foregroundColor: .white,backgroundColor: .gradient(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .top, endPoint: .bottom)) ) {
+                        nextButtonPressed()
+                    }
+                    .padding(.horizontal, 40)
+                }
+                .background(Color.white) // This ensures the background of the VStack is white
+                .cornerRadius(50, corners: .top) // Add corner radius to the top
+                .edgesIgnoringSafeArea(.bottom) // Ensure it stretches to the bottom edge
             }
         }
+    }
+
+
         
         var billExpenes: some View {
             GeometryReader { geometry in
@@ -286,7 +294,7 @@ struct RegistrationModal: View {
                         
                         Spacer()
                         
-                        ConfirmationButton(title: "Next", type: .primaryLargeConfirmation, foregroundColor: .white, backgroundColor: .PGred) {
+                        ConfirmationButton(title: "Next", type: .primaryLargeConfirmation, foregroundColor: .white,backgroundColor: .gradient(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .top, endPoint: .bottom)) )  {
                             
                             nextButtonPressed()
                             
@@ -327,7 +335,7 @@ struct RegistrationModal: View {
                         
                         Spacer()
                         
-                        ConfirmationButton(title: "Next", type: .primaryLargeConfirmation, foregroundColor: .white, backgroundColor: .PGred) {
+                        ConfirmationButton(title: "Next", type: .primaryLargeConfirmation, foregroundColor: .white,backgroundColor: .gradient(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .top, endPoint: .bottom)) )  {
                             
                             nextButtonPressed()
                             
@@ -364,7 +372,7 @@ struct RegistrationModal: View {
                     
                     Spacer()
                     
-                    ConfirmationButton(title: "Continue", type: .primaryLargeConfirmation, foregroundColor: .PGred, backgroundColor: .white) {
+                    ConfirmationButton(title: "Next", type: .primaryLargeConfirmation, foregroundColor: .white,backgroundColor: .gradient(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .top, endPoint: .bottom)) )  {
                         
                         nextButtonPressed()
                     }

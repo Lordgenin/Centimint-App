@@ -26,41 +26,21 @@ struct BackgroundView2: View {
                     VStack(spacing: 0) {
                         
                         LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .top, endPoint: .bottom)
-                            .clipShape(BulgingBottomCorners(bulgeAmount: 30))
-                            .frame(minHeight: geometry.size.height * 0.4)
-
+                            .frame(minHeight: geometry.size.height * 0.4) // At least 60% of the screen height for the gradient
                         
-                        Color.black
-                            .cornerRadius(30, corners: [.topLeading, .topTrailing])
+                        Color.white
+                            .cornerRadius(50, corners: .top)
                             .frame(height: geometry.size.height * 0.6) // 60% of the screen height for the white part
                             }
 
                     .edgesIgnoringSafeArea(.all)
                 }
+                .background(Color.purple)
             }
             
         }
     }
 }
-
-struct BulgingBottomCorners: Shape {
-    var bulgeAmount: CGFloat = 30.0
-
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-        
-        let midX = rect.midX
-        
-        path.move(to: CGPoint(x: 0, y: 0)) // Start top-left
-        path.addLine(to: CGPoint(x: 0, y: rect.maxY - bulgeAmount)) // Move down left side
-        path.addQuadCurve(to: CGPoint(x: rect.maxX, y: rect.maxY - bulgeAmount), control: CGPoint(x: midX, y: rect.maxY + bulgeAmount))
-        path.addLine(to: CGPoint(x: rect.maxX, y: 0)) // Move up right side to top-right
-        
-        return path
-    }
-}
-
-
 
 struct BackgroundView_Previews: PreviewProvider {
     static var previews: some View {
