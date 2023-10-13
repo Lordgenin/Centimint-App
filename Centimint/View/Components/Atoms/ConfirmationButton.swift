@@ -2,28 +2,31 @@ import SwiftUI
 
 enum ButtonType {
     case primaryLargeConfirmation
+    case primaryLargeConfirmationGradient
+    case primaryLargeConfirmationGradientText
     case animatedCircleButton(icon: Icon)
     case backButton
     case loading
 }
 
-enum BackgroundStyle {
-    case color(Color)
-    case gradient(LinearGradient)
-}
+//enum ColorStyle {
+//    case color(Color)
+//    case gradient(LinearGradient)
+//}
+
+
 
 struct ConfirmationButton: View {
     var title: String
     var type: ButtonType
-    var foregroundColor: Color? = .white
-    var backgroundColor:  BackgroundStyle? = .color(.black)
-    var backgroundOpacity: Double? = 0.2
+//    var foregroundColor: Color?
+//    var backgroundColor:  Color?
+//    var backgroundOpacity: Double? = 0.2
     @State var isLoading: Bool = false
 
     var action: () -> ()
     
     @State private var isExpanded: Bool = false
-
 
     var body: some View {
         switch type {
@@ -32,24 +35,52 @@ struct ConfirmationButton: View {
                 Text(title)
                     .font(.title3)
                     .bold()
-                    .foregroundColor(foregroundColor)
+                    .foregroundColor(.blue)
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(Color.clear)  // use a clear background for the Text itself
-                    .overlay(
-                        Group {
-                            switch backgroundColor {
-                            case .color(let color):
-                                color
-                            case .gradient(let gradient):
-                                gradient
-                            case .none:
-                                Color.clear
-                            }
-                        }
+                    .background(.background)
+                    .cornerRadius(18)
+            }
+            
+        case .primaryLargeConfirmationGradient:
+            Button(action: action) {
+                Text(title)
+                    .font(.title3)
+                    .bold()
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(
+                        LinearGradient(gradient: Gradient(colors: [Color.Primary, Color.PGred]), startPoint: .top, endPoint: .bottom)
+                            .ignoresSafeArea(.all)
                     )
                     .cornerRadius(18)
             }
+            
+        case .primaryLargeConfirmationGradientText:
+            Button(action: action) {
+                ZStack {
+                    // Gray background
+                    Color.white
+                        .cornerRadius(18)
+
+                    // Gradient text
+                    Text(title)
+                        .font(.title3)
+                        .bold()
+                        .foregroundColor(.clear)
+                        .background(
+                            LinearGradient(gradient: Gradient(colors: [Color.Primary, Color.PGred]), startPoint: .top, endPoint: .bottom)
+                                .mask(Text(title).bold().font(.title3))
+                        )
+                }
+                .padding(.horizontal)
+                .frame(height: 50) // Define the height or adjust accordingly
+                .cornerRadius(18)
+            }
+
+
+
 
         case .animatedCircleButton(let icon):
             Button(action: {
@@ -184,10 +215,10 @@ struct ConfirmationButton_Previews: PreviewProvider {
             ConfirmationButton(title: "test", type: .primaryLargeConfirmation) {
                 print("aciton")
             }
-            ConfirmationButton(title: "test", type: .primaryLargeConfirmation) {
+            ConfirmationButton(title: "test", type: .primaryLargeConfirmationGradientText) {
                 print("action 2")
             }
-            ConfirmationButton(title: "test", type: .primaryLargeConfirmation) {
+            ConfirmationButton(title: "test", type: .primaryLargeConfirmationGradient) {
                 print("action 2")
             }
             .padding()
@@ -198,12 +229,12 @@ struct ConfirmationButton_Previews: PreviewProvider {
                     .bold()
                     .foregroundColor(.secondaryWhite)
                 
-                ConfirmationButton(title: "test", type: .animatedCircleButton(icon: .sfSymbol(.upload, color: .secondaryCharcoal)), foregroundColor: .secondaryCharcoal) {
-                    print("action 2")
+//                ConfirmationButton(title: "test", type: .animatedCircleButton(icon: .sfSymbol(.upload, color: .blue)), foregroundColor: .color(.blue)) {
+//                    print("action 2")
                 }
                 Spacer()
             }
             .background(Color.secondaryCharcoal)
         }
     }
-}
+//}

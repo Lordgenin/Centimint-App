@@ -62,7 +62,7 @@ class AppCoordinator: ObservableObject {
             switch result {
             case .success(_):
                 completion(.success("success"))
-                self.serviceManager.showTabBar = true
+                self.serviceManager.showTabBar = false
             case .failure(let error):
                 completion(.failure(error))
             }
@@ -73,7 +73,7 @@ class AppCoordinator: ObservableObject {
             switch result {
             case .success(_):
                 completion(.success("success"))
-                self.serviceManager.showTabBar = true
+                self.serviceManager.showTabBar = false
             case .failure(let error):
                 completion(.failure(error))
             }
