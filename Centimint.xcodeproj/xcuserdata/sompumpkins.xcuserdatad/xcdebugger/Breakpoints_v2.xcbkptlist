@@ -302,8 +302,8 @@
             filePath = "Centimint/AppCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "showHomeScreen()"
             landmarkType = "7">
          </BreakpointContent>
@@ -312,15 +312,175 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "12822EF4-1CC6-4009-B88C-2EE49B684957"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Centimint/AppCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "showHomeScreen()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "12822EF4-1CC6-4009-B88C-2EE49B684957 - 192d0a774cd277df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Centimint.AppCoordinator.showHomeScreen() -&gt; ()"
+                  moduleName = "Centimint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sompumpkins/Documents/WorkSpace/Centimint/Centimint/AppCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "147"
+                  endingLineNumber = "147"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "12822EF4-1CC6-4009-B88C-2EE49B684957 - 192d0a774cd277bc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Centimint.AppCoordinator.showHomeScreen() -&gt; ()"
+                  moduleName = "Centimint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sompumpkins/Documents/WorkSpace/Centimint/Centimint/AppCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "148"
+                  endingLineNumber = "148"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9A273F02-59DA-44D0-8163-805FB131104E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Centimint/View/Screens/Home/HomeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "addButton"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9A3BD6A9-D32F-4F39-BF5F-B3B613113FE8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Centimint/View/Screens/Home/HomeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "HomeView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "9A3BD6A9-D32F-4F39-BF5F-B3B613113FE8 - fd206f33289d0a36"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of Centimint.HomeView.isPurchaseEntryPresented : Swift.Bool"
+                  moduleName = "Centimint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sompumpkins/Documents/WorkSpace/Centimint/Centimint/View/Screens/Home/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "9A3BD6A9-D32F-4F39-BF5F-B3B613113FE8 - 55f2b3b8cd23abc7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Centimint.HomeView.init(viewModel: Centimint.HomeViewModel) -&gt; Centimint.HomeView"
+                  moduleName = "Centimint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sompumpkins/Documents/WorkSpace/Centimint/Centimint/View/Screens/Home/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "68">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "915D5501-9632-4F12-A927-4C2B3EA0C34C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Centimint/AppCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "showIntroScreen()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "915D5501-9632-4F12-A927-4C2B3EA0C34C - 94943c66388f1230"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Centimint.AppCoordinator.showIntroScreen() -&gt; ()"
+                  moduleName = "Centimint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sompumpkins/Documents/WorkSpace/Centimint/Centimint/AppCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "140"
+                  endingLineNumber = "140"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "915D5501-9632-4F12-A927-4C2B3EA0C34C - 94943c66388f1230"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Centimint.AppCoordinator.showIntroScreen() -&gt; ()"
+                  moduleName = "Centimint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sompumpkins/Documents/WorkSpace/Centimint/Centimint/AppCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "140"
+                  endingLineNumber = "140"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "14FADB3E-4305-483E-90B0-80BADCEEE4FD"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Centimint/AppCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
-            landmarkName = "showHomeScreen()"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "handleLoginSuccess()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

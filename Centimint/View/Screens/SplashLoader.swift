@@ -1,10 +1,3 @@
-//
-//  SplashLoader.swift
-//  QuickLifts
-//
-//  Created by Tremaine Grant on 6/27/23.
-//
-
 import SwiftUI
 import AVFoundation
 

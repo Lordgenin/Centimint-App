@@ -19,6 +19,7 @@ struct HomeView: View {
     
     @StateObject private var weeklyCalendarViewModel = WeeklyCalendarViewModel(appCoordinator: AppCoordinator(serviceManager: ServiceManager()))
     
+    @State private var isPurchaseEntryPresented: Bool = false
     
     var topBar: some View {
         HStack {
@@ -54,22 +55,20 @@ struct HomeView: View {
                 ForEach(0..<5) { _ in
                     // Here, I'm using the ConfirmationButton as an example.
                     // You may want to customize or create a new type to represent each purchase card.
-                    ConfirmationButton(title: "Item Name $30", type: .primaryLargeConfirmation) {
+                    ConfirmationButton(title: "Item", type: .primaryLargeConfirmationWithShadow) {
                         print("Item tapped")
                     }
-                    .padding(.vertical, 5)
                 }
-                
             }
            .padding()
        }
 
     var addButton: some View {
-        ConfirmationButton(title: "+", type: .animatedCircleButton(icon: .sfSymbol(.plus, color: .black))) {
-               print("Add new item")
-           }
-           .padding(.vertical, 10)
-       }
+        ConfirmationButton(title: "test", type: .plusButton) {
+            isPurchaseEntryPresented.toggle()
+        }
+                .padding(.vertical, 10)
+    }
     
     var bottomBar: some View {
         HStack {
@@ -100,6 +99,9 @@ struct HomeView: View {
                 addButton
                 bottomBar
             }
+            .sheet(isPresented: $isPurchaseEntryPresented) {
+                PurchaseEntry(viewModel: PurchaseEntryModel(appCoordinator: AppCoordinator(serviceManager: ServiceManager())))
+            }
             .padding()
         
                     
@@ -117,12 +119,13 @@ struct HomeView: View {
         .onAppear {
             let userService = UserService.sharedInstance
             delay(0) {
-                if !userService.settings.hasIntroductionModalShown {
+                if userService.settings.hasIntroductionModalShown {
                     viewModel.appCoordinator.showRegisterModal()
                 }
             }
         }
     }
+    
 }
 
 

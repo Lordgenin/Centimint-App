@@ -4,24 +4,16 @@ enum ButtonType {
     case primaryLargeConfirmation
     case primaryLargeConfirmationGradient
     case primaryLargeConfirmationGradientText
+    case primaryLargeConfirmationWithShadow
     case animatedCircleButton(icon: Icon)
     case backButton
     case loading
+    case plusButton
 }
-
-//enum ColorStyle {
-//    case color(Color)
-//    case gradient(LinearGradient)
-//}
-
-
 
 struct ConfirmationButton: View {
     var title: String
     var type: ButtonType
-//    var foregroundColor: Color?
-//    var backgroundColor:  Color?
-//    var backgroundOpacity: Double? = 0.2
     @State var isLoading: Bool = false
 
     var action: () -> ()
@@ -78,8 +70,46 @@ struct ConfirmationButton: View {
                 .frame(height: 50) // Define the height or adjust accordingly
                 .cornerRadius(18)
             }
+            
+        case .primaryLargeConfirmationWithShadow:
+                    Button(action: action) {
+                        ZStack {
+                            HStack {
+                                        Text(title)
+                                            .font(.headline)
+                                            .foregroundColor(.black)
+                                        
+                                        Spacer()
+                                        
+                                        Text("30")
+                                            .font(.headline)
+                                            .foregroundColor(Color.gray)
+                                    }
+                                .padding()
+                                //.frame(maxWidth: .infinity)
+                                .background(.white)
+                                .cornerRadius(18)
+                               
+                            .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)
+                        }
+                        .frame(height: 50)
+                    }
 
-
+        case .plusButton:
+                    Button(action: {
+                        // Toggle or set a state to present the modal
+                 //       isModalPresented.toggle()
+                    }) {
+                        Image(systemName: "plus") // Using SF Symbols here
+                            .font(.system(size: 40))
+                            .frame(width: 56, height: 56)
+                            .foregroundColor(.white)
+                            .background(  LinearGradient(gradient: Gradient(colors: [Color.Primary, Color.PGred]), startPoint: .top, endPoint: .bottom))
+                            .cornerRadius(28)
+                    }
+               //     .sheet(isPresented: $isModalPresented) {
+                        // Your modal content where user enters an item purchased
+                //        PurchaseEntryView()
 
 
         case .animatedCircleButton(let icon):
@@ -104,7 +134,7 @@ struct ConfirmationButton: View {
                     if !isExpanded {
                         IconImage(icon)
                             .frame(width: 56, height: 56)
-                            .background(Color.secondaryWhite)
+                            .background(Color.black)
                             .cornerRadius(28)
                             .opacity(isExpanded ? 0 : 1)
                     }
@@ -112,7 +142,7 @@ struct ConfirmationButton: View {
                     if isExpanded {
                         Text(title)
                             .font(.headline)
-                            .foregroundColor(Color.secondaryCharcoal)
+                            .foregroundColor(Color.black)
                             .padding(.horizontal, 60)
                             .padding(.vertical, 20)
                             .background(Color.secondaryWhite)
@@ -212,10 +242,16 @@ struct ConfirmationButton_Previews: PreviewProvider {
             ConfirmationButton(title: "test", type: .primaryLargeConfirmation) {
                 print("aciton")
             }
-            ConfirmationButton(title: "test", type: .primaryLargeConfirmation) {
+            ConfirmationButton(title: "test", type: .primaryLargeConfirmationWithShadow) {
                 print("aciton")
             }
             ConfirmationButton(title: "test", type: .primaryLargeConfirmationGradientText) {
+                print("action 2")
+            }
+            ConfirmationButton(title: "test", type: .animatedCircleButton(icon: .sfSymbol(.plus, color: .black))) {
+                print("action 2")
+            }
+            ConfirmationButton(title: "test", type: .plusButton) {
                 print("action 2")
             }
             ConfirmationButton(title: "test", type: .primaryLargeConfirmationGradient) {
