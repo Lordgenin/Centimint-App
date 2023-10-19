@@ -72,15 +72,8 @@ struct ContentView: View {
                         TermsConditionsView(viewModel: TermsConditionsViewModel(appCoordinator: appCoordinator))
                     case .privacyPolicy:
                         PrivacyPolicyView(viewModel: PrivacyPolicyViewModel(appCoordinator: appCoordinator))
-//                    case .commandDetail(let command):
-//                        if let userCommand = CommandService.sharedInstance.getUserCommand(command: command) {
-//                            CommandDetailView(viewModel: CommandDetailViewModel(appCoordinator: appCoordinator, command: command, userCommand: userCommand))
-//                        } else {
-//                            CommandDetailView(viewModel: CommandDetailViewModel(appCoordinator: appCoordinator, command: command, userCommand: nil))
-//                        }
                     case .registration:
                         RegistrationModal(viewModel: RegistrationModalViewModel(appCoordinator: appCoordinator))
-                        
                     case .calendar(let viewModel):
                         CalendarView(viewModel: viewModel)
 //                    case .payWall:

@@ -492,18 +492,18 @@ struct RegistrationModal: View {
         }
     }
     
-    func BackgroundView(geometry: GeometryProxy) -> some View {
-        ZStack {
-            Color.PGred
-                .ignoresSafeArea(.all)
-            
-            VStack {
-                Spacer()
-                    .frame(height: geometry.size.height / 2)
-                
-                RoundedRectangle(cornerRadius: 50, style: .circular)
-                    .foregroundColor(.white)
-            }
-            .ignoresSafeArea(.all)
-        }
-    }
+//    func BackgroundView(geometry: GeometryProxy) -> some View {
+//        ZStack {
+//            Color.PGred
+//                .ignoresSafeArea(.all)
+//            
+//            VStack {
+//                Spacer()
+//                    .frame(height: geometry.size.height / 2)
+//                
+//                RoundedRectangle(cornerRadius: 50, style: .circular)
+//                    .foregroundColor(.white)
+//            }
+//            .ignoresSafeArea(.all)
+//        }
+//    }

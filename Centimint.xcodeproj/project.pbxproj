@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4F0A1BCC2AD8B7CC00C82679 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0A1BCB2AD8B7CC00C82679 /* BackgroundView.swift */; };
+		4F0A1BD12AE01C2900C82679 /* PurchaseEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0A1BD02AE01C2900C82679 /* PurchaseEntry.swift */; };
 		4F208C312A9BCF39005F490A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F208C302A9BCF39005F490A /* Constants.swift */; };
 		4F208C332A9BE724005F490A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F208C322A9BE724005F490A /* GoogleService-Info.plist */; };
 		4F208C502A9E164D005F490A /* WeeklyCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F208C4F2A9E164D005F490A /* WeeklyCalendarView.swift */; };
@@ -89,6 +90,7 @@
 
 /* Begin PBXFileReference section */
 		4F0A1BCB2AD8B7CC00C82679 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		4F0A1BD02AE01C2900C82679 /* PurchaseEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseEntry.swift; sourceTree = "<group>"; };
 		4F208C302A9BCF39005F490A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4F208C322A9BE724005F490A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4F208C4F2A9E164D005F490A /* WeeklyCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyCalendarView.swift; sourceTree = "<group>"; };
@@ -180,6 +182,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F0A1BCF2AE01BC000C82679 /* PurchaseEntryModal */ = {
+			isa = PBXGroup;
+			children = (
+				4F0A1BD02AE01C2900C82679 /* PurchaseEntry.swift */,
+			);
+			path = PurchaseEntryModal;
+			sourceTree = "<group>";
+		};
 		4F208C4E2A9E1608005F490A /* WeeklyCalendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +214,7 @@
 		4F29EE282A99C50500F469F9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4F0A1BCF2AE01BC000C82679 /* PurchaseEntryModal */,
 				4FDC28DE2A9AB9E600A6680A /* RegistrationModal */,
 				4F29EE292A99C50500F469F9 /* User.swift */,
 			);
@@ -241,7 +252,6 @@
 			isa = PBXGroup;
 			children = (
 				4FDC28E32A9ABA6800A6680A /* NotificationPanel */,
-				4F29EE282A99C50500F469F9 /* Models */,
 				4FDC28B72A99D7A300A6680A /* SplashLoader.swift */,
 				4F29EE342A99C50500F469F9 /* AboutView.swift */,
 				4F29EE352A99C50500F469F9 /* Settings */,
@@ -477,6 +487,7 @@
 				4FDC28B52A99D31700A6680A /* AppCoordinator.swift */,
 				4F29EE2A2A99C50500F469F9 /* Helpers */,
 				4F29EE6F2A99C50500F469F9 /* Materials */,
+				4F29EE282A99C50500F469F9 /* Models */,
 				4F29EE212A99C50500F469F9 /* Services */,
 				4F29EE322A99C50500F469F9 /* View */,
 				4F5C084B2A99BCD100299A62 /* CentimintApp.swift */,
@@ -607,6 +618,7 @@
 				4F29EE9C2A99C50500F469F9 /* CircularProgressBarView.swift in Sources */,
 				4FDC28DC2A9AA48000A6680A /* Array+.swift in Sources */,
 				4FDC28E52A9ABA6800A6680A /* NotificationPanelView.swift in Sources */,
+				4F0A1BD12AE01C2900C82679 /* PurchaseEntry.swift in Sources */,
 				4F29EE822A99C50500F469F9 /* RegistrationView.swift in Sources */,
 				4F29EE872A99C50500F469F9 /* OfferingViewModel.swift in Sources */,
 				4F29EE942A99C50500F469F9 /* RemoteImage.swift in Sources */,

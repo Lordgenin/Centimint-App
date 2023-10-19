@@ -33,6 +33,7 @@ class AppCoordinator: ObservableObject {
         case weeklyCalendar(viewModel: WeeklyCalendarViewModel)
         case alert(viewModel: NotificationPanelViewModel)
         case payWall
+        case purchaseEntryViewModel
     }
     enum ToastNotification {
         case toast(viewModel: ToastViewModel)
@@ -173,6 +174,9 @@ class AppCoordinator: ObservableObject {
             self.toast = nil
         }
     }
+    func purchaseEntryViewModel(){
+        modalScreen = .purchaseEntryViewModel
+    }
     func showPayWallModal() {
         modalScreen = .payWall
     }
@@ -202,14 +206,6 @@ class AppCoordinator: ObservableObject {
     func showNotificationModal(viewModel: CustomModalViewModel) {
         notificationScreen = .notification(viewModel: viewModel)
     }
-    //    func showLogAnEventModal() {
-    //        notificationScreen = .notification(viewModel: CustomModalViewModel(type: .log, title: "Choose an event", message: "What time did this occur?", primaryButtonTitle: "Log", primaryAction: { message in
-    //            self.hideNotification()
-    //            self.showToast(viewModel: ToastViewModel(message: "Your log has been added successfully", backgroundColor: .ash, textColor: .primaryPurple))
-    //        }, secondaryAction: {
-    //            self.hideNotification()
-    //        }))
-    //    }
     
 }
 
@@ -254,6 +250,8 @@ extension AppCoordinator.Screen: Screen {
         case .registration:
             return AnyView(EmptyView())
         case .payWall:
+            return AnyView(EmptyView())
+        case .purchaseEntryViewModel:
             return AnyView(EmptyView())
         case .aboutScreen:
             return AnyView(EmptyView())

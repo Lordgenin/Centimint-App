@@ -13,6 +13,7 @@ struct User {
     var subscriptionType: SubscriptionType
     var createdAt: Date
     var updatedAt: Date
+    var purchaseEntries: [PurchaseEntry]
 
     init(id: String,
          email: String,
@@ -27,7 +28,8 @@ struct User {
          profileImageURL: String?,
          subscriptionType: SubscriptionType,
          createdAt: Date,
-         updatedAt: Date) {
+         updatedAt: Date,
+         dictionary: [String: Any]) {
         self.id = id
         self.email = email
         self.birthdate = birthdate
@@ -40,6 +42,11 @@ struct User {
         self.savingGoal = savingGoal
         self.goalDate = goalDate
         self.weeklyAllowance = weeklyAllowance
+        if let purchaseEntryDictionaries = dictionary["purchaseEntries"] as? [[String: Any]] {
+                  self.purchaseEntries = purchaseEntryDictionaries.map { PurchaseEntry(dictionary: $0) }
+              } else {
+                  self.purchaseEntries = []
+              }
        
     }
 
@@ -68,6 +75,12 @@ struct User {
 
         self.createdAt = Date(timeIntervalSince1970: createdAtTimestamp)
         self.updatedAt = Date(timeIntervalSince1970: updatedAtTimestamp)
+        
+        if let purchaseEntryDictionaries = dictionary["purchaseEntries"] as? [[String: Any]] {
+                  self.purchaseEntries = purchaseEntryDictionaries.map { PurchaseEntry(dictionary: $0) }
+              } else {
+                  self.purchaseEntries = []
+              }
 
     }
     
@@ -78,6 +91,28 @@ struct User {
 
         return newUser
     }
+    
+    struct PurchaseEntry {
+        var purchaseName: String
+        var purchaseAmount: Double
+        var dateCreated: Date
+        
+        init(dictionary: [String: Any]) {
+            self.purchaseName = dictionary["purchaseName"] as? String ?? ""
+            self.purchaseAmount = dictionary["purchaseAmount"] as? Double ?? 0.0
+            let dateCreatedTimestamp = dictionary["dateCreated"] as? Double ?? 0.0
+            self.dateCreated = Date(timeIntervalSince1970: dateCreatedTimestamp)
+        }
+        
+        func toDictionary() -> [String: Any] {
+            return [
+                "purchaseName": purchaseName,
+                "purchaseAmount": purchaseAmount,
+                "dateCreated": dateCreated.timeIntervalSince1970
+            ]
+        }
+    }
+
 
     func toDictionary() -> [String: Any] {
         return [
@@ -94,7 +129,8 @@ struct User {
             "weeklyAllowance": weeklyAllowance,
             
             "createdAt": createdAt.timeIntervalSince1970,
-            "updatedAt": updatedAt.timeIntervalSince1970
+            "updatedAt": updatedAt.timeIntervalSince1970,
+            "purchaseEntries": purchaseEntries.map { $0.toDictionary() }
         ]
     }
 }
