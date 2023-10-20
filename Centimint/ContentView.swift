@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  PuppySchool
-//
-//  Created by Tremaine Grant on 8/18/23.
-//
-
 import SwiftUI
 
 struct ContentView: View {
@@ -68,6 +61,8 @@ struct ContentView: View {
                     switch modal {
                     case .aboutScreen:
                         AboutView(viewModel: AboutViewModel(appCoordinator: appCoordinator))
+                    case .purchaseEntryViewModel:
+                        PurchaseEntryView(viewModel: PurchaseEntryViewModel(appCoordinator: appCoordinator))
                     case .terms:
                         TermsConditionsView(viewModel: TermsConditionsViewModel(appCoordinator: appCoordinator))
                     case .privacyPolicy:

@@ -19,8 +19,6 @@ struct HomeView: View {
     
     @StateObject private var weeklyCalendarViewModel = WeeklyCalendarViewModel(appCoordinator: AppCoordinator(serviceManager: ServiceManager()))
     
-    @State private var isPurchaseEntryPresented: Bool = false
-    
     var topBar: some View {
         HStack {
             Image(systemName: "arrow.left") // <- Use SF symbols for this
@@ -65,19 +63,22 @@ struct HomeView: View {
 
     var addButton: some View {
         ConfirmationButton(title: "test", type: .plusButton) {
-            isPurchaseEntryPresented.toggle()
+            print("Button was tapped")
+            viewModel.appCoordinator.purchaseEntryViewModel()
         }
-                .padding(.vertical, 10)
+        .padding(.vertical, 10)
     }
+
     
     var bottomBar: some View {
         HStack {
             ConfirmationButton(title: "Allowance", type: .primaryLargeConfirmationGradientText) {
+               
             }
            
             
            ConfirmationButton(title: "Insights", type: .primaryLargeConfirmationGradient) {
-
+               viewModel.appCoordinator.showInsightsScreen()
             }
         }
     }
@@ -98,9 +99,6 @@ struct HomeView: View {
                 }
                 addButton
                 bottomBar
-            }
-            .sheet(isPresented: $isPurchaseEntryPresented) {
-                PurchaseEntry(viewModel: PurchaseEntryModel(appCoordinator: AppCoordinator(serviceManager: ServiceManager())))
             }
             .padding()
         
