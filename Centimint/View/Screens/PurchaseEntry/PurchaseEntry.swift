@@ -1,13 +1,6 @@
-//
-//  PurchaseEntry.swift
-//  Centimint
-//
-//  Created by Sompumpkins on 10/18/23.
-//
-
 import SwiftUI
 
-class PurchaseEntryModel: ObservableObject {
+class PurchaseEntryViewModel: ObservableObject {
 	let appCoordinator: AppCoordinator
     
     @Published  var purchaseName: String = ""
@@ -28,8 +21,8 @@ class PurchaseEntryModel: ObservableObject {
     
 }
 
-struct PurchaseEntry: View {
-    @ObservedObject var viewModel: PurchaseEntryModel
+struct PurchaseEntryView: View {
+    @ObservedObject var viewModel: PurchaseEntryViewModel
     
     var body: some View {
     
@@ -38,13 +31,20 @@ struct PurchaseEntry: View {
             
             
             VStack {
-                // Back arrow (placeholder)
+                
                 HStack {
-                    Image(systemName: "arrow.left")
-                        .font(.title2)
+                    IconImage(.sfSymbol(.close, color: .black))
                         .padding()
+                        .onTapGesture {
+                            print("tapped")
+                            viewModel.appCoordinator.closeModals()
+                        }.onTapGesture {
+                            print("VStack tapped")
+                        }
                     Spacer()
+                    
                 }
+            
                 
                 Spacer()
                 
@@ -83,6 +83,8 @@ struct PurchaseEntry: View {
                         .padding(.horizontal)
                     
                     ConfirmationButton(title: "Save", type: .primaryLargeConfirmationGradient) {
+                        print("Save button tapped")
+                        viewModel.appCoordinator.closeModals()
                         
                     }
                     
@@ -96,13 +98,16 @@ struct PurchaseEntry: View {
                 
             }
         }
-        .edgesIgnoringSafeArea(.all)
+        .onTapGesture {
+            print("ZStack tapped")
+        }
+       // .edgesIgnoringSafeArea(.all)
     }
 }
 
 
 struct PurchaseEntry_Previews: PreviewProvider {
     static var previews: some View {
-        PurchaseEntry(viewModel: PurchaseEntryModel(appCoordinator: AppCoordinator(serviceManager: ServiceManager())))
+        PurchaseEntryView(viewModel: PurchaseEntryViewModel(appCoordinator: AppCoordinator(serviceManager: ServiceManager())))
     }
 }

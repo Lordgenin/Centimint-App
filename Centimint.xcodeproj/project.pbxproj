@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4F0A1BCC2AD8B7CC00C82679 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0A1BCB2AD8B7CC00C82679 /* BackgroundView.swift */; };
 		4F0A1BD12AE01C2900C82679 /* PurchaseEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0A1BD02AE01C2900C82679 /* PurchaseEntry.swift */; };
+		4F0A1BD62AE1BCEB00C82679 /* InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0A1BD52AE1BCEB00C82679 /* InsightsView.swift */; };
+		4F0A1BDA2AE1E8FF00C82679 /* GradientButtonGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0A1BD92AE1E8FF00C82679 /* GradientButtonGroupView.swift */; };
+		4F0A1BDD2AE2025E00C82679 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0A1BDC2AE2025E00C82679 /* PieChartView.swift */; };
 		4F208C312A9BCF39005F490A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F208C302A9BCF39005F490A /* Constants.swift */; };
 		4F208C332A9BE724005F490A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F208C322A9BE724005F490A /* GoogleService-Info.plist */; };
 		4F208C502A9E164D005F490A /* WeeklyCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F208C4F2A9E164D005F490A /* WeeklyCalendarView.swift */; };
@@ -91,6 +94,9 @@
 /* Begin PBXFileReference section */
 		4F0A1BCB2AD8B7CC00C82679 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		4F0A1BD02AE01C2900C82679 /* PurchaseEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseEntry.swift; sourceTree = "<group>"; };
+		4F0A1BD52AE1BCEB00C82679 /* InsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
+		4F0A1BD92AE1E8FF00C82679 /* GradientButtonGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButtonGroupView.swift; sourceTree = "<group>"; };
+		4F0A1BDC2AE2025E00C82679 /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 		4F208C302A9BCF39005F490A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4F208C322A9BE724005F490A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4F208C4F2A9E164D005F490A /* WeeklyCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyCalendarView.swift; sourceTree = "<group>"; };
@@ -182,12 +188,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4F0A1BCF2AE01BC000C82679 /* PurchaseEntryModal */ = {
+		4F0A1BCF2AE01BC000C82679 /* PurchaseEntry */ = {
 			isa = PBXGroup;
 			children = (
 				4F0A1BD02AE01C2900C82679 /* PurchaseEntry.swift */,
 			);
-			path = PurchaseEntryModal;
+			path = PurchaseEntry;
+			sourceTree = "<group>";
+		};
+		4F0A1BD22AE1BCA100C82679 /* Insights */ = {
+			isa = PBXGroup;
+			children = (
+				4F0A1BD52AE1BCEB00C82679 /* InsightsView.swift */,
+			);
+			path = Insights;
+			sourceTree = "<group>";
+		};
+		4F0A1BD82AE1E8BC00C82679 /* GradientSelectionDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				4F0A1BD92AE1E8FF00C82679 /* GradientButtonGroupView.swift */,
+			);
+			path = GradientSelectionDisplay;
+			sourceTree = "<group>";
+		};
+		4F0A1BDB2AE2021700C82679 /* PieSlice */ = {
+			isa = PBXGroup;
+			children = (
+				4F0A1BDC2AE2025E00C82679 /* PieChartView.swift */,
+			);
+			path = PieSlice;
 			sourceTree = "<group>";
 		};
 		4F208C4E2A9E1608005F490A /* WeeklyCalendar */ = {
@@ -214,8 +244,6 @@
 		4F29EE282A99C50500F469F9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4F0A1BCF2AE01BC000C82679 /* PurchaseEntryModal */,
-				4FDC28DE2A9AB9E600A6680A /* RegistrationModal */,
 				4F29EE292A99C50500F469F9 /* User.swift */,
 			);
 			path = Models;
@@ -251,6 +279,9 @@
 		4F29EE332A99C50500F469F9 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				4F0A1BD22AE1BCA100C82679 /* Insights */,
+				4F0A1BCF2AE01BC000C82679 /* PurchaseEntry */,
+				4FDC28DE2A9AB9E600A6680A /* Registration */,
 				4FDC28E32A9ABA6800A6680A /* NotificationPanel */,
 				4FDC28B72A99D7A300A6680A /* SplashLoader.swift */,
 				4F29EE342A99C50500F469F9 /* AboutView.swift */,
@@ -308,6 +339,7 @@
 		4F29EE482A99C50500F469F9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				4F0A1BDB2AE2021700C82679 /* PieSlice */,
 				4F29EE492A99C50500F469F9 /* Molecules */,
 				4F29EE642A99C50500F469F9 /* Atoms */,
 				4F29EE6E2A99C50500F469F9 /* Paticles */,
@@ -318,6 +350,7 @@
 		4F29EE492A99C50500F469F9 /* Molecules */ = {
 			isa = PBXGroup;
 			children = (
+				4F0A1BD82AE1E8BC00C82679 /* GradientSelectionDisplay */,
 				4F208C4E2A9E1608005F490A /* WeeklyCalendar */,
 				4F29EE4A2A99C50500F469F9 /* MultipleChoice */,
 				4F29EE4C2A99C50500F469F9 /* ToastView */,
@@ -507,13 +540,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		4FDC28DE2A9AB9E600A6680A /* RegistrationModal */ = {
+		4FDC28DE2A9AB9E600A6680A /* Registration */ = {
 			isa = PBXGroup;
 			children = (
 				4FDC28DF2A9AB9E600A6680A /* RegistrationModal.swift */,
 				4FDC28E02A9AB9E600A6680A /* StageSelectionView.swift */,
 			);
-			path = RegistrationModal;
+			path = Registration;
 			sourceTree = "<group>";
 		};
 		4FDC28E32A9ABA6800A6680A /* NotificationPanel */ = {
@@ -615,6 +648,7 @@
 				4F29EE712A99C50500F469F9 /* NotificationService.swift in Sources */,
 				4F29EE792A99C50500F469F9 /* Color+.swift in Sources */,
 				4F29EE7E2A99C50500F469F9 /* AboutView.swift in Sources */,
+				4F0A1BDD2AE2025E00C82679 /* PieChartView.swift in Sources */,
 				4F29EE9C2A99C50500F469F9 /* CircularProgressBarView.swift in Sources */,
 				4FDC28DC2A9AA48000A6680A /* Array+.swift in Sources */,
 				4FDC28E52A9ABA6800A6680A /* NotificationPanelView.swift in Sources */,
@@ -653,6 +687,7 @@
 				4F29EEA12A99C50500F469F9 /* CardBackground.swift in Sources */,
 				4F0A1BCC2AD8B7CC00C82679 /* BackgroundView.swift in Sources */,
 				4F29EE7B2A99C50500F469F9 /* PlayerView.swift in Sources */,
+				4F0A1BD62AE1BCEB00C82679 /* InsightsView.swift in Sources */,
 				4FDC28D72A9A997600A6680A /* Color+PuppySchool.swift in Sources */,
 				4F208C312A9BCF39005F490A /* Constants.swift in Sources */,
 				4F29EE8B2A99C50500F469F9 /* LoginView.swift in Sources */,
@@ -666,6 +701,7 @@
 				4F29EE742A99C50500F469F9 /* FirebaseService.swift in Sources */,
 				4F29EE8C2A99C50500F469F9 /* IntroView.swift in Sources */,
 				4F29EE722A99C50500F469F9 /* ServiceManager.swift in Sources */,
+				4F0A1BDA2AE1E8FF00C82679 /* GradientButtonGroupView.swift in Sources */,
 				4F29EE962A99C50500F469F9 /* HeaderView.swift in Sources */,
 				4FDC28DD2A9AA48000A6680A /* Date+.swift in Sources */,
 				4F29EE7C2A99C50500F469F9 /* Corners.swift in Sources */,

@@ -3,9 +3,6 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "AppCoordinator.handleLoginSuccess():AppCoordinator.swift">
-      </ContextState>
-      <ContextState
          contextName = "closure #1 in closure #2 in ContentView.body.getter:ContentView.swift">
       </ContextState>
       <ContextState

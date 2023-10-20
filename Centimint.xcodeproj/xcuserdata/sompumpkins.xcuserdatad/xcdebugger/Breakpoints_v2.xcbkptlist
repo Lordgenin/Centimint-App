@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C9836BDA-899C-43BD-850E-649DBF970B2F"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Centimint/View/Screens/Models/RegistrationModal/RegistrationModal.swift"
@@ -302,8 +302,8 @@
             filePath = "Centimint/AppCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "showHomeScreen()"
             landmarkType = "7">
          </BreakpointContent>
@@ -318,8 +318,8 @@
             filePath = "Centimint/AppCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "showHomeScreen()"
             landmarkType = "7">
             <Locations>
@@ -359,70 +359,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9A273F02-59DA-44D0-8163-805FB131104E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Centimint/View/Screens/Home/HomeView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "addButton"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9A3BD6A9-D32F-4F39-BF5F-B3B613113FE8"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Centimint/View/Screens/Home/HomeView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "HomeView"
-            landmarkType = "14">
-            <Locations>
-               <Location
-                  uuid = "9A3BD6A9-D32F-4F39-BF5F-B3B613113FE8 - fd206f33289d0a36"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "property wrapper backing initializer of Centimint.HomeView.isPurchaseEntryPresented : Swift.Bool"
-                  moduleName = "Centimint"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sompumpkins/Documents/WorkSpace/Centimint/Centimint/View/Screens/Home/HomeView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  uuid = "9A3BD6A9-D32F-4F39-BF5F-B3B613113FE8 - 55f2b3b8cd23abc7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Centimint.HomeView.init(viewModel: Centimint.HomeViewModel) -&gt; Centimint.HomeView"
-                  moduleName = "Centimint"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sompumpkins/Documents/WorkSpace/Centimint/Centimint/View/Screens/Home/HomeView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "68">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "915D5501-9632-4F12-A927-4C2B3EA0C34C"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -430,8 +366,8 @@
             filePath = "Centimint/AppCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
             landmarkName = "showIntroScreen()"
             landmarkType = "7">
             <Locations>
@@ -472,15 +408,205 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "14FADB3E-4305-483E-90B0-80BADCEEE4FD"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Centimint/AppCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "handleLoginSuccess()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "14FADB3E-4305-483E-90B0-80BADCEEE4FD - 22f0e1f3c4660499"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Centimint.AppCoordinator.handleLoginSuccess() -&gt; ()"
+                  moduleName = "Centimint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sompumpkins/Documents/WorkSpace/Centimint/Centimint/AppCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "14FADB3E-4305-483E-90B0-80BADCEEE4FD - 22f0e1f3c4660457"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Centimint.AppCoordinator.handleLoginSuccess() -&gt; ()"
+                  moduleName = "Centimint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sompumpkins/Documents/WorkSpace/Centimint/Centimint/AppCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "14FADB3E-4305-483E-90B0-80BADCEEE4FD - 22f0e1f3c46604b6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Centimint.AppCoordinator.handleLoginSuccess() -&gt; ()"
+                  moduleName = "Centimint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sompumpkins/Documents/WorkSpace/Centimint/Centimint/AppCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "14FADB3E-4305-483E-90B0-80BADCEEE4FD - 22f0e1f3c46604b6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Centimint.AppCoordinator.handleLoginSuccess() -&gt; ()"
+                  moduleName = "Centimint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sompumpkins/Documents/WorkSpace/Centimint/Centimint/AppCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CBF13BDF-20A2-4791-9FA5-A3A46C2403EF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Centimint/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "CBF13BDF-20A2-4791-9FA5-A3A46C2403EF - 6f19f67ba01f2dd0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;Centimint.AboutView, Centimint.PurchaseEntryView&gt;, SwiftUI._ConditionalContent&lt;Centimint.TermsConditionsView, Centimint.PrivacyPolicyView&gt;&gt;, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;Centimint.RegistrationModal, Centimint.CalendarView&gt;, SwiftUI._ConditionalContent&lt;Centimint.NotificationPanelView, Centimint.SettingsView&gt;&gt;&gt;, SwiftUI.EmptyView&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #2 () -&gt; Swift.Optional&lt;SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;Centimint.AboutView, Centimint.PurchaseEntryView&gt;, SwiftUI._ConditionalContent&lt;Centimint.TermsConditionsView, Centimint.PrivacyPolicyView&gt;&gt;, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;Centimint.RegistrationModal, Centimint.CalendarView&gt;, SwiftUI._ConditionalContent&lt;Centimint.NotificationPanelView, Centimint.SettingsView&gt;&gt;&gt;, SwiftUI.EmptyView&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;&gt; in Centimint.ContentView.body.getter : some"
+                  moduleName = "Centimint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sompumpkins/Documents/WorkSpace/Centimint/Centimint/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "1812">
+               </Location>
+               <Location
+                  uuid = "CBF13BDF-20A2-4791-9FA5-A3A46C2403EF - 6f19f67ba01f2af9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;Centimint.AboutView, Centimint.PurchaseEntryView&gt;, SwiftUI._ConditionalContent&lt;Centimint.TermsConditionsView, Centimint.PrivacyPolicyView&gt;&gt;, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;Centimint.RegistrationModal, Centimint.CalendarView&gt;, SwiftUI._ConditionalContent&lt;Centimint.NotificationPanelView, Centimint.SettingsView&gt;&gt;&gt;, SwiftUI.EmptyView&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #2 () -&gt; Swift.Optional&lt;SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;Centimint.AboutView, Centimint.PurchaseEntryView&gt;, SwiftUI._ConditionalContent&lt;Centimint.TermsConditionsView, Centimint.PrivacyPolicyView&gt;&gt;, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;Centimint.RegistrationModal, Centimint.CalendarView&gt;, SwiftUI._ConditionalContent&lt;Centimint.NotificationPanelView, Centimint.SettingsView&gt;&gt;&gt;, SwiftUI.EmptyView&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;&gt; in Centimint.ContentView.body.getter : some"
+                  moduleName = "Centimint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sompumpkins/Documents/WorkSpace/Centimint/Centimint/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "1812">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0ECB1289-A37F-4E06-8158-C418264042DA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Centimint/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "0ECB1289-A37F-4E06-8158-C418264042DA - 6f19f67ba01f2dd0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;Centimint.AboutView, Centimint.PurchaseEntryView&gt;, SwiftUI._ConditionalContent&lt;Centimint.TermsConditionsView, Centimint.PrivacyPolicyView&gt;&gt;, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;Centimint.RegistrationModal, Centimint.CalendarView&gt;, SwiftUI._ConditionalContent&lt;Centimint.NotificationPanelView, Centimint.SettingsView&gt;&gt;&gt;, SwiftUI.EmptyView&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #2 () -&gt; Swift.Optional&lt;SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;Centimint.AboutView, Centimint.PurchaseEntryView&gt;, SwiftUI._ConditionalContent&lt;Centimint.TermsConditionsView, Centimint.PrivacyPolicyView&gt;&gt;, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;Centimint.RegistrationModal, Centimint.CalendarView&gt;, SwiftUI._ConditionalContent&lt;Centimint.NotificationPanelView, Centimint.SettingsView&gt;&gt;&gt;, SwiftUI.EmptyView&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;&gt; in Centimint.ContentView.body.getter : some"
+                  moduleName = "Centimint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sompumpkins/Documents/WorkSpace/Centimint/Centimint/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "1812">
+               </Location>
+               <Location
+                  uuid = "0ECB1289-A37F-4E06-8158-C418264042DA - 6f19f67ba01f2af9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;Centimint.AboutView, Centimint.PurchaseEntryView&gt;, SwiftUI._ConditionalContent&lt;Centimint.TermsConditionsView, Centimint.PrivacyPolicyView&gt;&gt;, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;Centimint.RegistrationModal, Centimint.CalendarView&gt;, SwiftUI._ConditionalContent&lt;Centimint.NotificationPanelView, Centimint.SettingsView&gt;&gt;&gt;, SwiftUI.EmptyView&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #2 () -&gt; Swift.Optional&lt;SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;Centimint.AboutView, Centimint.PurchaseEntryView&gt;, SwiftUI._ConditionalContent&lt;Centimint.TermsConditionsView, Centimint.PrivacyPolicyView&gt;&gt;, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;Centimint.RegistrationModal, Centimint.CalendarView&gt;, SwiftUI._ConditionalContent&lt;Centimint.NotificationPanelView, Centimint.SettingsView&gt;&gt;&gt;, SwiftUI.EmptyView&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;&gt; in Centimint.ContentView.body.getter : some"
+                  moduleName = "Centimint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sompumpkins/Documents/WorkSpace/Centimint/Centimint/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "1812">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "13686B38-36AF-4865-AD6F-35E31FCFC4DD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Centimint/View/Screens/Registration/RegistrationModal.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "nextButtonPressed()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6DA043FB-73CE-4A72-9A92-8829892D17AF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Centimint/Services/UserService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "getUser(completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

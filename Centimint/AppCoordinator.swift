@@ -34,6 +34,8 @@ class AppCoordinator: ObservableObject {
         case alert(viewModel: NotificationPanelViewModel)
         case payWall
         case purchaseEntryViewModel
+        case purchaseEntry
+        case insights
     }
     enum ToastNotification {
         case toast(viewModel: ToastViewModel)
@@ -93,7 +95,9 @@ class AppCoordinator: ObservableObject {
         showIntroScreen()
     }
     func handleLoginSuccess() {
-        UserDefaults.standard.removeObject(forKey: "hasIntroductionModalShown")
+        handleLogout()
+        let hasSeen = UserDefaults.standard.bool(forKey: "hasIntroductionModalShown")
+        print("Has user seen intro modal? \(hasSeen)")
         guard let user = Auth.auth().currentUser else {
             print("Weird user issue. User is not detected")
             return
@@ -111,7 +115,7 @@ class AppCoordinator: ObservableObject {
 //                switch result {
 //                case .success(let isSubscribed):
 //                    if isSubscribed {
-                        self.showHomeScreen()
+                        self.showRegisterModal()
 //                        UserService.sharedInstance.isSubscribed = true
 //                    } else {
 //                        self?.showPayWall()
@@ -137,6 +141,9 @@ class AppCoordinator: ObservableObject {
     /// Show screen functions
     func showIntroScreen() {
         setCurrentScreen(.introView)
+    }
+    func showInsightsScreen() {
+        setCurrentScreen(.insights)
     }
     func showChangePassword() {
         currentScreen = .changePassword
@@ -185,6 +192,9 @@ class AppCoordinator: ObservableObject {
     }
     func showWeeklyCalendarModal(viewModel: WeeklyCalendarViewModel) {
         modalScreen = .weeklyCalendar(viewModel: viewModel)
+    }
+    func showPurchaseEntryModal(){
+        modalScreen = .purchaseEntry
     }
     func hideToast() {
         toast = nil
@@ -239,6 +249,10 @@ extension AppCoordinator.Screen: Screen {
             return AnyView(
                 HomeView(viewModel: HomeViewModel(appCoordinator: appCoordinator, serviceManager: serviceManager))
             )
+        case .insights:
+            return AnyView(
+                InsightsView(viewModel: InsightsViewModel(appCoordinator: appCoordinator, serviceManager: serviceManager))
+            )
         case .changePassword:
             return AnyView(
                 ChangePasswordView(viewModel: ChangePasswordViewModel(appCoordinator: appCoordinator, serviceManager: serviceManager))
@@ -252,6 +266,8 @@ extension AppCoordinator.Screen: Screen {
         case .payWall:
             return AnyView(EmptyView())
         case .purchaseEntryViewModel:
+            return AnyView(EmptyView())
+        case .purchaseEntry:
             return AnyView(EmptyView())
         case .aboutScreen:
             return AnyView(EmptyView())

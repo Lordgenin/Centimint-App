@@ -104,54 +104,6 @@ struct RegistrationModal: View {
         VStack {
             (LinearGradient(gradient: Gradient(colors: [Color.Primary, Color.PGred]), startPoint: .top, endPoint: .bottom))
                 .ignoresSafeArea(.all)
-           // Color.PGred.ignoresSafeArea(.all)
-            //                if (selectedPage <= 5) {
-            //                    VStack(alignment: .leading, spacing: 0) {
-            //                        HStack {
-            //                            Text("\(selectedPage + 1)/5")
-            //                                .foregroundColor(Color.black)
-            //                                .font(.subheadline)
-            //                                .padding(.leading, 20)
-            //                            Spacer()
-            //                        }
-            //                        ProgressView(value: Double(selectedPage + 1), total: 5)
-            //                            .padding()
-            //                            .overlay(
-            //                                LinearGradient(
-            //                                    gradient: Gradient(colors: [
-            //                                        Color(UIColor(red: 0.35, green: 0.38, blue: 1, alpha: 1)),
-            //                                        Color(UIColor(red: 0.85, green: 0.34, blue: 1, alpha: 1))
-            //                                    ]),
-            //                                    startPoint: .leading,
-            //                                    endPoint: .trailing
-            //                                )
-            //                                .mask(
-            //                                    ProgressView(value: Double(selectedPage + 1), total: 5)
-            //                                        .padding()
-            //                                )
-            //                            )
-            //                    }
-            //                }
-            //                else if (selectedPage == 5) {
-            //                    HStack {
-            //                        Spacer()  // Add this Spacer to center the VStack
-            //                        VStack(spacing: 9) {
-            //                            Text(viewModel.completedRegistration.isEmpty ? "Completed Registration" : viewModel.completedRegistration)
-            //                                .multilineTextAlignment(.center)
-            //                                .foregroundColor(.black)
-            //                                .font(.system(size: 44))
-            //                                .bold()
-            //                            Text("Here's some information about your dog at this stage.")
-            //                                .multilineTextAlignment(.center)
-            //                                .font(.headline)
-            //                                .foregroundColor(.black)
-            //                        }
-            //                        Spacer()  // Add this Spacer to center the VStack
-            //                    }
-            //                    .padding(.top, 20)
-            //                    .padding(.bottom, 20)
-            //
-            //                }
         }
     }
     
@@ -491,19 +443,3 @@ struct RegistrationModal: View {
             }
         }
     }
-    
-//    func BackgroundView(geometry: GeometryProxy) -> some View {
-//        ZStack {
-//            Color.PGred
-//                .ignoresSafeArea(.all)
-//            
-//            VStack {
-//                Spacer()
-//                    .frame(height: geometry.size.height / 2)
-//                
-//                RoundedRectangle(cornerRadius: 50, style: .circular)
-//                    .foregroundColor(.white)
-//            }
-//            .ignoresSafeArea(.all)
-//        }
-//    }

@@ -5,6 +5,7 @@ enum ButtonType {
     case primaryLargeConfirmationGradient
     case primaryLargeConfirmationGradientText
     case primaryLargeConfirmationWithShadow
+    case primaryLargeConfirmationGradientStack
     case animatedCircleButton(icon: Icon)
     case backButton
     case loading
@@ -47,6 +48,19 @@ struct ConfirmationButton: View {
                             .ignoresSafeArea(.all)
                     )
                     .cornerRadius(18)
+            }
+            
+        case .primaryLargeConfirmationGradientStack:
+            Button(action: action) {
+                Text(title)
+                          .font(.title3)
+                          .bold()
+                          .foregroundColor(.white)
+                          .padding()
+                          .frame(maxWidth: .infinity)
+                          .background(Color.clear)
+                          .contentShape(Rectangle())
+                          .onTapGesture(perform: action)
             }
             
         case .primaryLargeConfirmationGradientText:
@@ -96,20 +110,19 @@ struct ConfirmationButton: View {
                     }
 
         case .plusButton:
-                    Button(action: {
-                        // Toggle or set a state to present the modal
-                 //       isModalPresented.toggle()
-                    }) {
-                        Image(systemName: "plus") // Using SF Symbols here
-                            .font(.system(size: 40))
-                            .frame(width: 56, height: 56)
-                            .foregroundColor(.white)
-                            .background(  LinearGradient(gradient: Gradient(colors: [Color.Primary, Color.PGred]), startPoint: .top, endPoint: .bottom))
-                            .cornerRadius(28)
-                    }
-               //     .sheet(isPresented: $isModalPresented) {
-                        // Your modal content where user enters an item purchased
-                //        PurchaseEntryView()
+            Button(action: action) {
+                
+                
+                    Image(systemName: "plus") // Using SF Symbols here
+                        .font(.system(size: 40))
+                        .frame(width: 56, height: 56)
+                        .foregroundColor(.white)
+                        .background(  LinearGradient(gradient: Gradient(colors: [Color.Primary, Color.PGred]), startPoint: .top, endPoint: .bottom))
+                        .cornerRadius(28)
+                
+            }
+                        
+      
 
 
         case .animatedCircleButton(let icon):
@@ -254,6 +267,44 @@ struct ConfirmationButton_Previews: PreviewProvider {
             ConfirmationButton(title: "test", type: .plusButton) {
                 print("action 2")
             }
+            
+    
+                VStack {
+                            // Gradient
+                            LinearGradient(gradient: Gradient(colors: [Color.Primary, Color.PGred]), startPoint: .top, endPoint: .bottom)
+                                .ignoresSafeArea(.all)
+                                .clipShape(RoundedRectangle(cornerRadius: 18))
+                    
+            ConfirmationButton(title: "test", type: .primaryLargeConfirmationGradientStack) {
+                print("action 2")
+            }
+            ConfirmationButton(title: "test", type: .primaryLargeConfirmationGradientStack) {
+                print("action 2")
+            }
+            ConfirmationButton(title: "test", type: .primaryLargeConfirmationGradientStack) {
+                print("action 2")
+            }
+        }
+                .padding()
+            
+                        .background(
+                            LinearGradient(gradient: Gradient(colors: [Color.Primary, Color.PGred]), startPoint: .top, endPoint: .bottom)
+                        )
+                        .mask(
+                            VStack(spacing: 10) {
+                                Rectangle().frame(height: 50)
+                                Rectangle().frame(height: 50)
+                                Rectangle().frame(height: 50)
+                            }
+                            .padding()
+                        )
+                        .clipShape(RoundedRectangle(cornerRadius: 18))
+                        .padding()
+            
+            ConfirmationButton(title: "test", type: .primaryLargeConfirmationGradient) {
+                print("action 2")
+            }
+            .padding()
             ConfirmationButton(title: "test", type: .primaryLargeConfirmationGradient) {
                 print("action 2")
             }
@@ -270,6 +321,7 @@ struct ConfirmationButton_Previews: PreviewProvider {
                 }
                 Spacer()
             }
+        
             .background(Color.secondaryCharcoal)
         }
     }
